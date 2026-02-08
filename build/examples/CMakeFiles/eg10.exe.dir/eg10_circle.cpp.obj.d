@@ -1,14 +1,70 @@
-CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: \
- F:\VSCodeWorkspace\slimeballGraphicLib\src\painter\Painter.cpp \
- F:/VSCodeWorkspace/slimeballGraphicLib/include/Painter.hpp \
- F:/VSCodeWorkspace/slimeballGraphicLib/include/Color.hpp \
- F:/msys64/ucrt64/include/windows.h F:/msys64/ucrt64/include/_mingw.h \
+examples/CMakeFiles/eg10.exe.dir/eg10_circle.cpp.obj: \
+ F:\VSCodeWorkspace\slimeballGraphicLib\examples\eg10_circle.cpp \
+ F:/VSCodeWorkspace/slimeballGraphicLib/include/Graphics.hpp \
+ F:/VSCodeWorkspace/slimeballGraphicLib/include/Canvas.hpp \
+ F:/msys64/ucrt64/include/c++/15.2.0/vector \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/type_traits \
+ F:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/move.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/predefined_ops.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bit \
+ F:/msys64/ucrt64/include/c++/15.2.0/concepts \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/new_allocator.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/new \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/initializer_list \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/cstddef \
+ F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ F:/msys64/ucrt64/include/stddef.h F:/msys64/ucrt64/include/crtdefs.h \
+ F:/msys64/ucrt64/include/corecrt.h F:/msys64/ucrt64/include/_mingw.h \
  F:/msys64/ucrt64/include/_mingw_mac.h \
  F:/msys64/ucrt64/include/_mingw_secapi.h \
  F:/msys64/ucrt64/include/vadefs.h \
  F:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
- F:/msys64/ucrt64/include/sdkddkver.h F:/msys64/ucrt64/include/excpt.h \
- F:/msys64/ucrt64/include/crtdefs.h F:/msys64/ucrt64/include/corecrt.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
+ F:/msys64/ucrt64/include/c++/15.2.0/tuple \
+ F:/VSCodeWorkspace/slimeballGraphicLib/include/Color.hpp \
+ F:/msys64/ucrt64/include/windows.h F:/msys64/ucrt64/include/sdkddkver.h \
+ F:/msys64/ucrt64/include/excpt.h \
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
  F:/msys64/ucrt64/include/stdarg.h \
  F:/msys64/ucrt64/include/_mingw_stdarg.h \
@@ -29,8 +85,6 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: \
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86intrin.h \
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86gprintrin.h \
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/ia32intrin.h \
- F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
- F:/msys64/ucrt64/include/stddef.h \
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/adxintrin.h \
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/bmiintrin.h \
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/bmi2intrin.h \
@@ -74,10 +128,6 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: \
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
  F:/msys64/ucrt64/include/c++/15.2.0/stdlib.h \
  F:/msys64/ucrt64/include/c++/15.2.0/cstdlib \
- F:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
- F:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
- F:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
- F:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
  F:/msys64/ucrt64/include/stdlib.h \
  F:/msys64/ucrt64/include/corecrt_wstdlib.h \
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
@@ -249,56 +299,6 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: \
  F:/msys64/ucrt64/include/sec_api/stralign_s.h \
  F:/msys64/ucrt64/include/winsvc.h F:/msys64/ucrt64/include/mcx.h \
  F:/msys64/ucrt64/include/imm.h \
- F:/VSCodeWorkspace/slimeballGraphicLib/include/Canvas.hpp \
- F:/msys64/ucrt64/include/c++/15.2.0/vector \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
- F:/msys64/ucrt64/include/c++/15.2.0/type_traits \
- F:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
- F:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/move.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h \
- F:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h \
- F:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/predefined_ops.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bit \
- F:/msys64/ucrt64/include/c++/15.2.0/concepts \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h \
- F:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/new_allocator.h \
- F:/msys64/ucrt64/include/c++/15.2.0/new \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
- F:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
- F:/msys64/ucrt64/include/c++/15.2.0/initializer_list \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h \
- F:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h \
- F:/msys64/ucrt64/include/c++/15.2.0/cstddef \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
- F:/msys64/ucrt64/include/c++/15.2.0/tuple \
  F:/VSCodeWorkspace/slimeballGraphicLib/include/Logger.hpp \
  F:/msys64/ucrt64/include/c++/15.2.0/iostream \
  F:/msys64/ucrt64/include/c++/15.2.0/ostream \
@@ -400,9 +400,6 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: \
  F:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
  F:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
  F:/msys64/ucrt64/include/c++/15.2.0/chrono \
- F:/VSCodeWorkspace/slimeballGraphicLib/include/Logger.hpp \
- F:/VSCodeWorkspace/slimeballGraphicLib/include/Color.hpp \
- F:/VSCodeWorkspace/slimeballGraphicLib/include/Utils.hpp \
  F:/VSCodeWorkspace/slimeballGraphicLib/include/Window.hpp \
  F:/msys64/ucrt64/include/c++/15.2.0/functional \
  F:/msys64/ucrt64/include/c++/15.2.0/bits/std_function.h \
@@ -417,36 +414,4 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: \
  F:/msys64/ucrt64/include/c++/15.2.0/compare \
  F:/VSCodeWorkspace/slimeballGraphicLib/include/Utils.hpp \
  F:/VSCodeWorkspace/slimeballGraphicLib/include/Painter.hpp \
- F:/msys64/ucrt64/include/c++/15.2.0/stack \
- F:/msys64/ucrt64/include/c++/15.2.0/deque \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_deque.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/deque.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_stack.h \
- F:/msys64/ucrt64/include/c++/15.2.0/map \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tree.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_map.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multimap.h \
- F:/msys64/ucrt64/include/c++/15.2.0/queue \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_heap.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_queue.h \
- F:/msys64/ucrt64/include/c++/15.2.0/algorithm \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/uniform_int_dist.h \
- F:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
- F:/msys64/ucrt64/include/c++/15.2.0/climits \
- F:/msys64/ucrt64/include/c++/15.2.0/cmath \
- F:/msys64/ucrt64/include/math.h \
- F:/msys64/ucrt64/include/c++/15.2.0/bits/specfun.h \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/gamma.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/special_function_util.h \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/bessel_function.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/beta_function.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/ell_integral.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/exp_integral.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/hypergeometric.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/legendre_function.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_hermite.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
- F:/msys64/ucrt64/include/c++/15.2.0/tr1/riemann_zeta.tcc
+ F:/VSCodeWorkspace/slimeballGraphicLib/include/EntryPoint.hpp

@@ -1284,10 +1284,12 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: F:/VSCodeWorksp
   F:/msys64/ucrt64/include/basetsd.h \
   F:/msys64/ucrt64/include/bcrypt.h \
   F:/msys64/ucrt64/include/bemapiset.h \
+  F:/msys64/ucrt64/include/c++/15.2.0/algorithm \
   F:/msys64/ucrt64/include/c++/15.2.0/array \
   F:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
   F:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bit \
+  F:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/align.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
@@ -1343,9 +1345,11 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: F:/VSCodeWorksp
   F:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
+  F:/msys64/ucrt64/include/c++/15.2.0/bits/specfun.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/std_function.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/std_mutex.h \
+  F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
@@ -1369,6 +1373,7 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: F:/VSCodeWorksp
   F:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf_iterator.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
+  F:/msys64/ucrt64/include/c++/15.2.0/bits/uniform_int_dist.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/unique_lock.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h \
   F:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_map.h \
@@ -1380,7 +1385,9 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: F:/VSCodeWorksp
   F:/msys64/ucrt64/include/c++/15.2.0/cctype \
   F:/msys64/ucrt64/include/c++/15.2.0/cerrno \
   F:/msys64/ucrt64/include/c++/15.2.0/chrono \
+  F:/msys64/ucrt64/include/c++/15.2.0/climits \
   F:/msys64/ucrt64/include/c++/15.2.0/clocale \
+  F:/msys64/ucrt64/include/c++/15.2.0/cmath \
   F:/msys64/ucrt64/include/c++/15.2.0/compare \
   F:/msys64/ucrt64/include/c++/15.2.0/concepts \
   F:/msys64/ucrt64/include/c++/15.2.0/cstddef \
@@ -1414,6 +1421,7 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: F:/VSCodeWorksp
   F:/msys64/ucrt64/include/c++/15.2.0/new \
   F:/msys64/ucrt64/include/c++/15.2.0/ostream \
   F:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
+  F:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
   F:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
   F:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
   F:/msys64/ucrt64/include/c++/15.2.0/queue \
@@ -1425,6 +1433,18 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: F:/VSCodeWorksp
   F:/msys64/ucrt64/include/c++/15.2.0/string \
   F:/msys64/ucrt64/include/c++/15.2.0/string_view \
   F:/msys64/ucrt64/include/c++/15.2.0/system_error \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/bessel_function.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/beta_function.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/ell_integral.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/exp_integral.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/gamma.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/hypergeometric.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/legendre_function.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_hermite.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
+  F:/msys64/ucrt64/include/c++/15.2.0/tr1/special_function_util.h \
   F:/msys64/ucrt64/include/c++/15.2.0/tuple \
   F:/msys64/ucrt64/include/c++/15.2.0/type_traits \
   F:/msys64/ucrt64/include/c++/15.2.0/typeinfo \
@@ -1484,6 +1504,7 @@ CMakeFiles/slimeballGraphicsLib.dir/src/painter/Painter.cpp.obj: F:/VSCodeWorksp
   F:/msys64/ucrt64/include/locale.h \
   F:/msys64/ucrt64/include/lzexpand.h \
   F:/msys64/ucrt64/include/malloc.h \
+  F:/msys64/ucrt64/include/math.h \
   F:/msys64/ucrt64/include/mciapi.h \
   F:/msys64/ucrt64/include/mcx.h \
   F:/msys64/ucrt64/include/memoryapi.h \
@@ -2969,6 +2990,8 @@ F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h:
 F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h:
 
 F:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h:
+
+F:/msys64/ucrt64/include/c++/15.2.0/climits:
 
 F:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h:
 

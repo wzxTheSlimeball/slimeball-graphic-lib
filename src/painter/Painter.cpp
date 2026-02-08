@@ -6,6 +6,9 @@
 #include <stack>
 #include <map>
 #include <queue>
+#include <algorithm>
+#include <climits>
+#include <cmath>
 
 Core::logger PainterLogger;
 bool Window::Painter::alphaBlender(int x,int y,int width,int height,const Core::Color &color){
@@ -252,5 +255,120 @@ bool Window::Painter::floodFill(Window::Point source,const Core::Color& color){
     SelectObject(memDC,hOldBmp);
     DeleteObject(hBmp);
     DeleteDC(memDC);
+    return true;
+}
+bool Window::Painter::hollowPolygon(const vector<Point>& points,const Core::Color& color){
+    for(unsigned int i=0;i<points.size();i++){
+        bool result=line(points[i],points[(i+1)%points.size()],color);
+        if(!result){
+            return false;
+        }
+    }
+    return true;
+}
+bool Window::Painter::slopeLine(Point a,Point b,const Core::Color& color){
+    int dx=b.x-a.x;
+    int dy=b.y-a.y;
+    int steps=abs(dx)>abs(dy)?abs(dx):abs(dy);
+    if(steps==0){
+        return putPixel(a.x,a.y,color);
+    }
+    float xInc=dx/(float)steps;
+    float yInc=dy/(float)steps;
+    float x=(float)a.x;
+    float y=(float)a.y;
+    for(int i=0;i<=steps;i++){
+        int xi=(int)(x+(x>=0.0f?0.5f:-0.5f));
+        int yi=(int)(y+(y>=0.0f?0.5f:-0.5f));
+        if(!putPixel(xi,yi,color)){
+            return false;
+        }
+        x+=xInc;
+        y+=yInc;
+    }
+    return true;
+}
+bool Window::Painter::solidPolygon(const vector<Point>& points,const Core::Color& color){
+    if(points.size()<3) return false;
+    struct Edge{int minY;int maxY;float curX;float invSlope;};
+    int globalMinY=INT_MAX;
+    int globalMaxY=INT_MIN;
+    for(const Point& pt:points){
+        globalMaxY=std::max(globalMaxY,pt.y);
+        globalMinY=std::min(globalMinY,pt.y);
+    }
+    if(globalMinY>globalMaxY) return false;
+    vector<vector<Edge>> ET(static_cast<size_t>(globalMaxY-globalMinY+1));
+    for(size_t i=0;i<points.size();++i){
+        size_t nxt=(i+1)%points.size();
+        Point a=points[i];
+        Point b=points[nxt];
+        if(a.y==b.y){
+            alphaBlender(std::min(a.x,b.x),a.y,abs(a.x-b.x),1,color);
+            continue;
+        }
+        int edgeMinY=std::min(a.y,b.y);
+        int edgeMaxY=std::max(a.y,b.y);
+        float curX=(a.y<b.y)?(float)a.x:(float)b.x;
+        float invSlope=(b.x-a.x)/static_cast<float>(b.y-a.y);
+        Edge e{edgeMinY,edgeMaxY,curX,invSlope};
+        ET[edgeMinY-globalMinY].push_back(e);
+    }
+    vector<Edge> AET;
+    for(int y=globalMinY;y<globalMaxY;++y){
+        auto& bucket=ET[y-globalMinY];
+        for(const Edge& e:bucket) AET.push_back(e);
+        AET.erase(std::remove_if(AET.begin(),AET.end(),[y](const Edge& e){return e.maxY<=y;}),AET.end());
+        if(AET.empty()) continue;
+        std::sort(AET.begin(),AET.end(),[](const Edge& a,const Edge& b){return a.curX<b.curX;});
+        if(AET.size()%2==1){
+            PainterLogger.traceLog(Core::logger::LOG_WARNING,"solidPolygon: odd number of intersections at scanline "+std::to_string(y));
+        }
+        for(size_t i=0;i+1<AET.size();i+=2){
+            int xStart=static_cast<int>(std::ceil(AET[i].curX));
+            int xEnd=static_cast<int>(std::floor(AET[i+1].curX));
+            if(xEnd>=xStart){
+                alphaBlender(xStart,y,xEnd-xStart+1,1,color);
+            }
+        }
+        for(auto &e:AET) e.curX+=e.invSlope;
+    }
+    return true;
+}
+bool Window::Painter::hollowCircle(const Window::Point& origin,int radius,const Core::Color& color){
+    auto insideWindow=[this](int tx,int ty){
+        return tx>=0&&tx<thisBindHandle->getRect().right&&ty>=0&&ty<thisBindHandle->getRect().bottom;
+    };
+    int ox=origin.x;
+    int oy=origin.y;
+    int x=0;
+    int y=radius;
+    int d=1-radius;
+    while(x<=y){
+        if(insideWindow(ox+x,oy+y))
+        putUnitPixel(ox+x,oy+y,color);
+        if(insideWindow(ox-x,oy+y))
+        putUnitPixel(ox-x,oy+y,color);
+        if(insideWindow(ox+x,oy-y))
+        putUnitPixel(ox+x,oy-y,color);
+        if(insideWindow(ox-x,oy-y))
+        putUnitPixel(ox-x,oy-y,color);
+        if(insideWindow(ox+y,oy+x))
+        putUnitPixel(ox+y,oy+x,color);
+        if(insideWindow(ox-y,oy+x))
+        putUnitPixel(ox-y,oy+x,color);
+        if(insideWindow(ox+y,oy-x))
+        putUnitPixel(ox+y,oy-x,color);
+        if(insideWindow(ox-y,oy-x))
+        putUnitPixel(ox-y,oy-x,color);
+        if(d<0){
+            d=d+2*x+3;
+        }
+        else{
+            d=d+2*(x-y)+5;
+            y--;
+        }
+        x++;
+    }
     return true;
 }

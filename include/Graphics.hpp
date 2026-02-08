@@ -37,4 +37,5 @@ namespace Graphics{
     using Window::Handle; 
     using Window::globalHandleManager;
     using Window::Painter;
+    using Window::Point;
 }

@@ -36,6 +36,7 @@ namespace Window{
         int x,y;
         Point()=default;
         Point(int x,int y):x(x),y(y){};
+        Point(std::pair<int,int> pair):x(pair.first),y(pair.second){};
         Point(const Point& other)=default;
         bool operator==(Point& other);
     };
@@ -75,10 +76,14 @@ namespace Window{
             void present();
             void switchHDC();
             bool putPixel(int x,int y,const Core::Color& color);
-            bool line(Point a,Point b,const Core::Color& color);//bresenham line
+            bool line(Point a,Point b,const Core::Color& color);
+            bool slopeLine(Point a,Point b,const Core::Color& color);
             void setSize(int target);
             bool putUnitPixel(int x,int y,const Core::Color& color);
             bool floodFill(Point source,const Core::Color& color);
+            bool hollowPolygon(const vector<Point>& points,const Core::Color& color);
+            bool solidPolygon(const vector<Point>& points,const Core::Color& color);
+            bool hollowCircle(const Point& origin,int radius,const Core::Color& color);
     };
 }
 #endif//PAINTER_HPP

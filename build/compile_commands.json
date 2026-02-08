@@ -43,8 +43,8 @@
 },
 {
   "directory": "F:/VSCodeWorkspace/slimeballGraphicLib/build/examples",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/eg8.exe.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\eg8.exe.dir\\eg8_flood_fill.cpp.obj -c F:\\VSCodeWorkspace\\slimeballGraphicLib\\examples\\eg8_flood_fill.cpp",
-  "file": "F:/VSCodeWorkspace/slimeballGraphicLib/examples/eg8_flood_fill.cpp",
-  "output": "examples/CMakeFiles/eg8.exe.dir/eg8_flood_fill.cpp.obj"
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/eg10.exe.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\eg10.exe.dir\\eg10_circle.cpp.obj -c F:\\VSCodeWorkspace\\slimeballGraphicLib\\examples\\eg10_circle.cpp",
+  "file": "F:/VSCodeWorkspace/slimeballGraphicLib/examples/eg10_circle.cpp",
+  "output": "examples/CMakeFiles/eg10.exe.dir/eg10_circle.cpp.obj"
 }
 ]

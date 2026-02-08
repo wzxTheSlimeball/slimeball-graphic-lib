@@ -37,13 +37,14 @@ namespace Window{
         }
         switch(uMsg){
             case WM_DESTROY:{
+                pThis->destroy();
+                globalHandleManager.checkAndQuit();
                 if(!pThis->thisDestroy){
                     WindowLogger.traceLog(Core::logger::LOG_WARNING,"The function\"thisDestroy\" is not defined yet,Skipping.");
                 }
                 else{
                     pThis->thisDestroy(hWnd,uMsg,wParam,lParam);
                 }
-                pThis->destroy();
                 break;
             }
             case WM_PAINT:{
@@ -174,9 +175,9 @@ namespace Window{
         return this->mHWnd;
     }
     void HandleManager::updateAll(){
-        for(auto &handle:handles){
-            InvalidateRect(handle->getHWnd(),NULL,TRUE);
-            UpdateWindow(handle->getHWnd());
+        for(unsigned long long idx=0;idx<handles.size();idx++){
+            InvalidateRect(handles[idx]->getHWnd(),NULL,TRUE);
+            handles[idx]->update();
         }
     }
     bool Handle::initBuffer(){
@@ -231,7 +232,6 @@ namespace Window{
         }
         HDC hdc=GetDC(this->mHWnd);
         BitBlt(hdc,0,0,this->mBuffer.width,this->mBuffer.height,this->mBuffer.memHDC,0,0,SRCCOPY);
-        this->thisCanvas=Core::Canvas(this->mBuffer.memHDC,width,height);
         ReleaseDC(this->mHWnd,hdc);
     }
     void Handle::resizeBuffer(){

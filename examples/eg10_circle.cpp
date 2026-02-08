@@ -1,12 +1,9 @@
 #include "Graphics.hpp"
 using namespace Graphics;
 long long mainWindowDrawer(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam,Painter& painter){
+    auto start=std::chrono::high_resolution_clock::now();
     painter.drawBackground(Color((unsigned char)255,255,255,255));
-    painter.setSize(1);
-    vector<Point> polygon({{50,50},{100,50},{100,100},{50,100}});
-    painter.hollowPolygon(polygon,Color((unsigned char)0,0,0,255));
-    painter.floodFill({75,75},Color((unsigned char)0,255,0,255));
-    painter.present();
+    painter.hollowCircle({100,100},30,Color((unsigned char)0,0,0,255));
     return 0;
 }//this is the window's "thisPaint" function
 int main(){
@@ -24,10 +21,12 @@ int main(){
         if(mainWindow.second!=NULL){
             //globalLogger.traceLog(Core::logger::LOG_NOTE,"loop #");
         }//Just make the compiler shut up
-        Sleep(16);
+        Sleep(16);//60FPS
+        auto start=std::chrono::high_resolution_clock::now();
         globalHandleManager.updateAll();
-        globalHandleManager.checkAndQuit();
+        auto end=std::chrono::high_resolution_clock::now();
+        auto duration=std::chrono::duration_cast<std::chrono::nanoseconds>(end-start);
+        globalLogger.varLog(Core::logger::LOG_INFO,"update duration",duration.count());
     }
     return 0;
 }
-//although the efficiency of flood fill is acceptable now,we still won't suggest to use it to fill large areas.

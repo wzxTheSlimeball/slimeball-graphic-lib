@@ -161,42 +161,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-examples/CMakeFiles/eg8.exe.dir/rule:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 examples/CMakeFiles/eg8.exe.dir/rule
-.PHONY : examples/CMakeFiles/eg8.exe.dir/rule
+examples/CMakeFiles/eg10.exe.dir/rule:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 examples/CMakeFiles/eg10.exe.dir/rule
+.PHONY : examples/CMakeFiles/eg10.exe.dir/rule
 
 # Convenience name for target.
-eg8.exe: examples/CMakeFiles/eg8.exe.dir/rule
-.PHONY : eg8.exe
+eg10.exe: examples/CMakeFiles/eg10.exe.dir/rule
+.PHONY : eg10.exe
 
 # fast build rule for target.
-eg8.exe/fast:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg8.exe.dir\build.make examples/CMakeFiles/eg8.exe.dir/build
-.PHONY : eg8.exe/fast
+eg10.exe/fast:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg10.exe.dir\build.make examples/CMakeFiles/eg10.exe.dir/build
+.PHONY : eg10.exe/fast
 
-eg8_flood_fill.obj: eg8_flood_fill.cpp.obj
-.PHONY : eg8_flood_fill.obj
+eg10_circle.obj: eg10_circle.cpp.obj
+.PHONY : eg10_circle.obj
 
 # target to build an object file
-eg8_flood_fill.cpp.obj:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg8.exe.dir\build.make examples/CMakeFiles/eg8.exe.dir/eg8_flood_fill.cpp.obj
-.PHONY : eg8_flood_fill.cpp.obj
+eg10_circle.cpp.obj:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg10.exe.dir\build.make examples/CMakeFiles/eg10.exe.dir/eg10_circle.cpp.obj
+.PHONY : eg10_circle.cpp.obj
 
-eg8_flood_fill.i: eg8_flood_fill.cpp.i
-.PHONY : eg8_flood_fill.i
+eg10_circle.i: eg10_circle.cpp.i
+.PHONY : eg10_circle.i
 
 # target to preprocess a source file
-eg8_flood_fill.cpp.i:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg8.exe.dir\build.make examples/CMakeFiles/eg8.exe.dir/eg8_flood_fill.cpp.i
-.PHONY : eg8_flood_fill.cpp.i
+eg10_circle.cpp.i:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg10.exe.dir\build.make examples/CMakeFiles/eg10.exe.dir/eg10_circle.cpp.i
+.PHONY : eg10_circle.cpp.i
 
-eg8_flood_fill.s: eg8_flood_fill.cpp.s
-.PHONY : eg8_flood_fill.s
+eg10_circle.s: eg10_circle.cpp.s
+.PHONY : eg10_circle.s
 
 # target to generate assembly for a file
-eg8_flood_fill.cpp.s:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg8.exe.dir\build.make examples/CMakeFiles/eg8.exe.dir/eg8_flood_fill.cpp.s
-.PHONY : eg8_flood_fill.cpp.s
+eg10_circle.cpp.s:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg10.exe.dir\build.make examples/CMakeFiles/eg10.exe.dir/eg10_circle.cpp.s
+.PHONY : eg10_circle.cpp.s
 
 # Help Target
 help:
@@ -210,10 +210,10 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... eg8.exe
-	@echo ... eg8_flood_fill.obj
-	@echo ... eg8_flood_fill.i
-	@echo ... eg8_flood_fill.s
+	@echo ... eg10.exe
+	@echo ... eg10_circle.obj
+	@echo ... eg10_circle.i
+	@echo ... eg10_circle.s
 .PHONY : help
 
 
