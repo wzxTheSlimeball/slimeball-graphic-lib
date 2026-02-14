@@ -51,6 +51,7 @@ namespace Window{
             case WM_PAINT:{
                 pThis->resizeBuffer();
                 Window::Painter thisPainter(hWnd,pThis);
+                thisPainter.switchHDC();
                 if(!pThis->thisPaint){
                     WindowLogger.traceLog(Core::logger::LOG_WARNING,"The function \"thisPaint\" is not defined yet,Skipping.");
                 }
@@ -557,6 +558,7 @@ namespace Window{
             return false;
         }
         this->mBuffer.memHDC=hdc;
+        this->mBuffer.hBmp=hbmp;
         this->mBuffer.oldBmp=(HBITMAP)SelectObject(hdc,hbmp);
         this->mBuffer.width=rectwidth;
         this->mBuffer.height=rectheight;
@@ -610,18 +612,22 @@ namespace Window{
             WindowLogger.traceLog(Core::logger::LOG_ERROR,"failed to create DC/bitmap");
             return;
         }
-        SelectObject(newMemDC,newBitmap);
+        HBITMAP prevOld=(HBITMAP)SelectObject(newMemDC,newBitmap);
         if(this->mBuffer.memHDC){
             if(this->mBuffer.oldBmp){
                 SelectObject(this->mBuffer.memHDC,this->mBuffer.oldBmp);
-                DeleteObject(this->mBuffer.oldBmp);
+            }
+            if(this->mBuffer.hBmp){
+                DeleteObject(this->mBuffer.hBmp);
             }
             DeleteDC(this->mBuffer.memHDC);
             this->mBuffer.memHDC=NULL;
             this->mBuffer.oldBmp=NULL;
+            this->mBuffer.hBmp=NULL;
         }
         this->mBuffer.memHDC=newMemDC;
-        this->mBuffer.oldBmp=newBitmap;
+        this->mBuffer.hBmp=newBitmap;
+        this->mBuffer.oldBmp=prevOld;
         this->mBuffer.width=newWidth;
         this->mBuffer.height=newHeight;
         clearBuffer();

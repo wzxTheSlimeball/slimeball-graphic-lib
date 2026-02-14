@@ -68,16 +68,11 @@ bool Window::Painter::drawBackground(const Core::Color &color){
 }
 void Window::Painter::updateHDC()
 {
-    switch(this->nowHDC){
-        case WINDOW:{
-            EndPaint(this->thisBindHWnd,&this->ps);
-            this->thisHDC=BeginPaint(this->thisBindHWnd,&this->ps);
-            break;
-        }
-        case BUFFER:{
-            this->thisHDC=this->thisBindHandle->getBuffer().memHDC;
-            break;
-        }
+    if(this->nowHDC==WINDOW){
+        this->thisHDC=this->windowHDC;
+    }
+    else{
+        this->thisHDC=this->thisBindHandle->getBuffer().memHDC;
     }
 }
 void Window::Painter::present(){

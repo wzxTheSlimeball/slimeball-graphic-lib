@@ -171,17 +171,93 @@ static int GetEncoderClsid(const WCHAR* mimeType, CLSID* pClsid)
 }
 
 bool Assets::saveScreen(HWND targetHWnd,std::wstring fileName,std::wstring type){
-    if(!targetHWnd) return false;
-    HBITMAP hBmp=saveScreenAsHBITMAP(targetHWnd);
-    if(!hBmp) return false;
-    Gdiplus::Bitmap *bmp=Gdiplus::Bitmap::FromHBITMAP(hBmp, NULL);
+    if(!targetHWnd)return false;
+    RECT windowRect;
+    if(!GetWindowRect(targetHWnd,&windowRect))return false;
+    RECT clientRect;
+    if(!GetClientRect(targetHWnd,&clientRect))return false;
+    POINT clientTopLeft={clientRect.left,clientRect.top};
+    if(!ClientToScreen(targetHWnd,&clientTopLeft))return false;
+    int clientW=clientRect.right-clientRect.left;
+    int clientH=clientRect.bottom-clientRect.top;
+    if(clientW<=0||clientH<=0)return false;
+    HBITMAP hBmp=NULL;
+    HDC hdcWindow=GetWindowDC(targetHWnd);
+    if(hdcWindow){
+        HDC hdcFull=CreateCompatibleDC(hdcWindow);
+        if(hdcFull){
+            int fullW=windowRect.right-windowRect.left;
+            int fullH=windowRect.bottom-windowRect.top;
+            HBITMAP hFullBmp=CreateCompatibleBitmap(hdcWindow,fullW,fullH);
+            if(hFullBmp){
+                HBITMAP oldFull=(HBITMAP)SelectObject(hdcFull,hFullBmp);
+                BOOL ok=PrintWindow(targetHWnd,hdcFull,PW_RENDERFULLCONTENT);
+                SelectObject(hdcFull,oldFull);
+                if(ok){
+                    HDC hdcClientMem=CreateCompatibleDC(hdcWindow);
+                    if(hdcClientMem){
+                        hBmp=CreateCompatibleBitmap(hdcWindow,clientW,clientH);
+                        if(hBmp){
+                            HBITMAP oldClient=(HBITMAP)SelectObject(hdcClientMem,hBmp);
+                            int offX=clientTopLeft.x-windowRect.left;
+                            int offY=clientTopLeft.y-windowRect.top;
+                            HDC hdcFullSelect=CreateCompatibleDC(hdcWindow);
+                            HBITMAP oldFull2=(HBITMAP)SelectObject(hdcFullSelect,hFullBmp);
+                            BitBlt(hdcClientMem,0,0,clientW,clientH,hdcFullSelect,offX,offY,SRCCOPY);
+                            SelectObject(hdcFullSelect,oldFull2);
+                            DeleteDC(hdcFullSelect);
+                            SelectObject(hdcClientMem,oldClient);
+                        }
+                        DeleteDC(hdcClientMem);
+                    }
+                }
+                DeleteObject(hFullBmp);
+            }
+            DeleteDC(hdcFull);
+        }
+        ReleaseDC(targetHWnd,hdcWindow);
+    }
+    if(!hBmp){
+        HDC hdcClient=GetDC(targetHWnd);
+        if(hdcClient){
+            HDC hdcMem=CreateCompatibleDC(hdcClient);
+            if(hdcMem){
+                hBmp=CreateCompatibleBitmap(hdcClient,clientW,clientH);
+                if(hBmp){
+                    HBITMAP oldBmp=(HBITMAP)SelectObject(hdcMem,hBmp);
+                    LRESULT r=SendMessage(targetHWnd,WM_PRINT,(WPARAM)hdcMem,PRF_CLIENT|PRF_CHILDREN);
+                    BOOL ok=(r!=0);
+                    if(!ok)ok=PrintWindow(targetHWnd,hdcMem,PW_RENDERFULLCONTENT);
+                    SelectObject(hdcMem,oldBmp);
+                    if(!ok){DeleteObject(hBmp);hBmp=NULL;}
+                }
+                DeleteDC(hdcMem);
+            }
+            ReleaseDC(targetHWnd,hdcClient);
+        }
+    }
+    if(!hBmp){
+        HDC hdcScreen=GetDC(NULL);
+        HDC hdcMem2=CreateCompatibleDC(hdcScreen);
+        hBmp=CreateCompatibleBitmap(hdcScreen,clientW,clientH);
+        if(hBmp){
+            HBITMAP old2=(HBITMAP)SelectObject(hdcMem2,hBmp);
+            BOOL bRet=BitBlt(hdcMem2,0,0,clientW,clientH,hdcScreen,clientTopLeft.x,clientTopLeft.y,SRCCOPY);
+            SelectObject(hdcMem2,old2);
+            if(!bRet){DeleteObject(hBmp);hBmp=NULL;}
+        }
+        DeleteDC(hdcMem2);
+        ReleaseDC(NULL,hdcScreen);
+        if(!hBmp)return false;
+    }
+    Gdiplus::Bitmap* bmp=Gdiplus::Bitmap::FromHBITMAP(hBmp,NULL);
     if(!bmp){
         DeleteObject(hBmp);
         return false;
     }
     std::wstring t=type;
     for(auto &c:t) c=towlower(c);
-    if(t.size()>0 && t[0]==L'.') t=t.substr(1);
+    if(t.size()>0&&t[0]==L'.') t=t.substr(1);
     const WCHAR* mime=L"image/png";
     if(t==L"png") mime=L"image/png";
     else if(t==L"jpg"||t==L"jpeg") mime=L"image/jpeg";

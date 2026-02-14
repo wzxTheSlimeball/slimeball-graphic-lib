@@ -52,13 +52,11 @@ namespace Window{
         Point(const Point& other)=default;
         bool operator==(Point& other);
     };
-    Window::Buffer* queryBufferFromHandle(Window::Handle* target){
-        return &target->getBuffer();
-    }
     struct Painter{
         private:
             HWND thisBindHWnd;
             HDC thisHDC;
+            HDC windowHDC;
             PAINTSTRUCT ps;
             enum currentHDC{
                 WINDOW,
@@ -68,12 +66,18 @@ namespace Window{
             int radius;
         public:
             Painter()=delete;
-            Painter(HWND hWnd,Handle *handle):thisBindHWnd(hWnd),thisHDC(queryBufferFromHandle(queryWindow(hWnd))->memHDC){
+            Painter(HWND hWnd,Handle *handle):thisBindHWnd(hWnd),thisHDC(NULL),windowHDC(NULL){
                 thisBindHandle=handle;
-                nowHDC=BUFFER;
+                nowHDC=WINDOW;
                 radius=0;
+                this->windowHDC=BeginPaint(this->thisBindHWnd,&this->ps);
+                this->thisHDC=this->windowHDC;
             };
             ~Painter(){
+                if(this->windowHDC){
+                    EndPaint(this->thisBindHWnd,&this->ps);
+                    this->windowHDC=NULL;
+                }
             }
             Painter(const Painter &)=delete;
             Painter &operator=(const Painter &)=delete;

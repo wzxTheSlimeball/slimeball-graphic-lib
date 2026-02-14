@@ -2,7 +2,7 @@
 using namespace Graphics;
 
 long long mainWindowPaint(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam,Painter& painter){
-    painter.drawBackground(Color(0xff0000));
+    painter.drawBackground(Color((unsigned char)255,0,0,255));
     return 0;
 }
 long long mainWindowLeftClickInstant(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam,int x,int y){
