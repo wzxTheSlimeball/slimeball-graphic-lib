@@ -1,6 +1,6 @@
 //MIT License
 
-//Copyright (c) 2026 wzxTheSlimeball
+//Copyright (c) 2026 Z-Multiplier
 #ifndef PAINTER_HPP
 #define PAINTER_HPP
 

@@ -1,6 +1,6 @@
 //MIT License
 
-//Copyright (c) 2026 wzxTheSlimeball
+//Copyright (c) 2026 Z-Multiplier
 #ifndef FONT_HPP
 #define FONT_HPP
 #include <windows.h>

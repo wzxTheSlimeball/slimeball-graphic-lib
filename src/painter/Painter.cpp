@@ -1,6 +1,6 @@
 //MIT License
 
-//Copyright (c) 2026 wzxTheSlimeball
+//Copyright (c) 2026 Z-Multiplier
 #include "Painter.hpp"
 #include "Logger.hpp"
 #include "Color.hpp"

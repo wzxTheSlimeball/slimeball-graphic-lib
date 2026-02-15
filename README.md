@@ -5,4 +5,3 @@ If I can make this work as a real graphic library(That could be thousands years 
 TODOS:
 - curves
 - animation
-- image output

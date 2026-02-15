@@ -1,6 +1,6 @@
 //MIT License
 
-//Copyright (c) 2026 wzxTheSlimeball
+//Copyright (c) 2026 Z-Multiplier
 #ifndef IMAGE_HPP
 #define IMAGE_HPP
 #include "Color.hpp"
