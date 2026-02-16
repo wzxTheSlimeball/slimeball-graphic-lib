@@ -102,8 +102,8 @@ bool Window::Painter::putPixel(int x,int y,const Core::Color& color){
 }
 bool Window::Painter::line(Point a,Point b,const Core::Color& color){
     if(a==b){
-        PainterLogger.traceLog(Core::logger::LOG_WARNING,"The points are the same,skip this");
-        return false;
+        putPixel(a.x,a.y,color);
+        return true;
     }
     int x1=a.x,x2=b.x,y1=a.y,y2=b.y;
     if(x1==x2){
@@ -486,8 +486,8 @@ bool Window::Painter::putText(char locateMode,const Point& locator,const Assets:
 Window::Point calcBezierPoint(double t,const vector<Window::Point>& vec){
     std::vector<Window::Point> temp=vec;
     int n=temp.size();
-    for (int r=1;r<n;++r){
-        for (int i=0;i<n-r;++i){
+    for(int r=1;r<n;++r){
+        for(int i=0;i<n-r;++i){
             temp[i].x=(1-t)*temp[i].x+t*temp[i+1].x;
             temp[i].y=(1-t)*temp[i].y+t*temp[i+1].y;
         }
@@ -513,6 +513,102 @@ bool Window::Painter::bezierCurve(const vector<Point>& points,int accuracy,const
     vec.push_back(end);
     for(unsigned int i=0;i<vec.size()-1;i++){
         bool result=line(vec[i],vec[i+1],color);
+        if(!result){
+            return false;
+        }
+    }
+    return true;
+}
+bool Window::Painter::hollowEllipse(Point center,int rX,int rY,const Core::Color& color){
+    int x=0;
+    int y=rY;
+    float d1=rY*rY-rX*rX*rY+0.25*rX*rX;
+    auto putfourPixel=[this](int cx,int cy,int x,int y,const Core::Color& color)
+    {
+        bool result=putPixel(cx+x,cy+y,color);
+        result=putPixel(cx-x,cy+y,color);
+        result=putPixel(cx-x,cy-y,color);
+        result=putPixel(cx+x,cy-y,color);
+        return result;
+    };
+    bool result=putfourPixel(center.x,center.y,x,y,color);
+    if(!result){
+        return false;
+    }
+    while(rX*rX*y>rY*rY*x){
+        if(d1<0){
+            d1+=2*rY*rY*(x+1)+rY*rY;
+        }
+        else{
+            d1+=2*rY*rY*(x+1)+rY*rY-2*rX*rX*(y-1);
+            y--;
+        }
+        x++;
+        bool result=putfourPixel(center.x,center.y,x,y,color);
+        if(!result){
+            return false;
+        }
+    }
+    float d2=rY*rY*(x+0.5)*(x+0.5)+rX*rX*(y-1)*(y-1)-rX*rX*rY*rY;
+    while(y>0){
+        if(d2>0){
+            d2+=-2*rX*rX*(y-1)+rX*rX;
+        }
+        else{
+            d2+=-2*rX*rX*(y-1)+rX*rX+2*rY*rY*(x+1);
+            x++;
+        }
+        y--;
+        bool result=putfourPixel(center.x,center.y,x,y,color);
+        if(!result){
+            return false;
+        }
+    }
+    return true;
+}
+bool Window::Painter::solidEllipse(Point center,int rX,int rY,const Core::Color& color){
+    int x=0;
+    int y=rY;
+    float d1=rY*rY-rX*rX*rY+0.25*rX*rX;
+    auto putfourPixel=[this](int cx,int cy,int x,int y,const Core::Color& color)
+    {
+        bool result=line(Point(cx+x,cy+y),Point(cx-x,cy+y),color);
+        result=line(Point(cx-x,cy-y),Point(cx+x,cy-y),color);
+        /*putPixel(cx+x,cy+y,color);
+        result=putPixel(cx-x,cy+y,color);
+        result=putPixel(cx-x,cy-y,color);
+        result=putPixel(cx+x,cy-y,color);*/
+        return result;
+    };
+    bool result=putfourPixel(center.x,center.y,x,y,color);
+    if(!result){
+        return false;
+    }
+    while(rX*rX*y>rY*rY*x){
+        if(d1<0){
+            d1+=2*rY*rY*(x+1)+rY*rY;
+        }
+        else{
+            d1+=2*rY*rY*(x+1)+rY*rY-2*rX*rX*(y-1);
+            y--;
+        }
+        x++;
+        bool result=putfourPixel(center.x,center.y,x,y,color);
+        if(!result){
+            return false;
+        }
+    }
+    float d2=rY*rY*(x+0.5)*(x+0.5)+rX*rX*(y-1)*(y-1)-rX*rX*rY*rY;
+    while(y>0){
+        if(d2>0){
+            d2+=-2*rX*rX*(y-1)+rX*rX;
+        }
+        else{
+            d2+=-2*rX*rX*(y-1)+rX*rX+2*rY*rY*(x+1);
+            x++;
+        }
+        y--;
+        bool result=putfourPixel(center.x,center.y,x,y,color);
         if(!result){
             return false;
         }

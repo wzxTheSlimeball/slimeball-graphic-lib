@@ -4,7 +4,7 @@ using namespace Graphics;
 long long mainWindowPaint(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam,Painter& painter){
     painter.setSize(1);
     painter.drawBackground(Color((unsigned char)255,255,255,255));
-    painter.bezierCurve({{10,10},{10,190},{190,190}},5,Color((unsigned char)0,0,0,255));
+    painter.solidEllipse(Point(100,100),50,25,Color((unsigned char)0,0,0,255));
     return 0;
 }
 int main(){
