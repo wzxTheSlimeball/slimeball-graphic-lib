@@ -161,42 +161,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-examples/CMakeFiles/test.exe.dir/rule:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 examples/CMakeFiles/test.exe.dir/rule
-.PHONY : examples/CMakeFiles/test.exe.dir/rule
+examples/CMakeFiles/new_year.exe.dir/rule:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 examples/CMakeFiles/new_year.exe.dir/rule
+.PHONY : examples/CMakeFiles/new_year.exe.dir/rule
 
 # Convenience name for target.
-test.exe: examples/CMakeFiles/test.exe.dir/rule
-.PHONY : test.exe
+new_year.exe: examples/CMakeFiles/new_year.exe.dir/rule
+.PHONY : new_year.exe
 
 # fast build rule for target.
-test.exe/fast:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\test.exe.dir\build.make examples/CMakeFiles/test.exe.dir/build
-.PHONY : test.exe/fast
+new_year.exe/fast:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\new_year.exe.dir\build.make examples/CMakeFiles/new_year.exe.dir/build
+.PHONY : new_year.exe/fast
 
-test.obj: test.cpp.obj
-.PHONY : test.obj
+new_year.obj: new_year.cpp.obj
+.PHONY : new_year.obj
 
 # target to build an object file
-test.cpp.obj:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\test.exe.dir\build.make examples/CMakeFiles/test.exe.dir/test.cpp.obj
-.PHONY : test.cpp.obj
+new_year.cpp.obj:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\new_year.exe.dir\build.make examples/CMakeFiles/new_year.exe.dir/new_year.cpp.obj
+.PHONY : new_year.cpp.obj
 
-test.i: test.cpp.i
-.PHONY : test.i
+new_year.i: new_year.cpp.i
+.PHONY : new_year.i
 
 # target to preprocess a source file
-test.cpp.i:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\test.exe.dir\build.make examples/CMakeFiles/test.exe.dir/test.cpp.i
-.PHONY : test.cpp.i
+new_year.cpp.i:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\new_year.exe.dir\build.make examples/CMakeFiles/new_year.exe.dir/new_year.cpp.i
+.PHONY : new_year.cpp.i
 
-test.s: test.cpp.s
-.PHONY : test.s
+new_year.s: new_year.cpp.s
+.PHONY : new_year.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\test.exe.dir\build.make examples/CMakeFiles/test.exe.dir/test.cpp.s
-.PHONY : test.cpp.s
+new_year.cpp.s:
+	cd /d F:\VSCodeWorkspace\slimeballGraphicLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\new_year.exe.dir\build.make examples/CMakeFiles/new_year.exe.dir/new_year.cpp.s
+.PHONY : new_year.cpp.s
 
 # Help Target
 help:
@@ -210,10 +210,10 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... test.exe
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
+	@echo ... new_year.exe
+	@echo ... new_year.obj
+	@echo ... new_year.i
+	@echo ... new_year.s
 .PHONY : help
 
 

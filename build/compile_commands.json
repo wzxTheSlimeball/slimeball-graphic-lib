@@ -55,8 +55,8 @@
 },
 {
   "directory": "F:/VSCodeWorkspace/slimeballGraphicLib/build/examples",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/test.exe.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\test.exe.dir\\test.cpp.obj -c F:\\VSCodeWorkspace\\slimeballGraphicLib\\examples\\test.cpp",
-  "file": "F:/VSCodeWorkspace/slimeballGraphicLib/examples/test.cpp",
-  "output": "examples/CMakeFiles/test.exe.dir/test.cpp.obj"
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/new_year.exe.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\new_year.exe.dir\\new_year.cpp.obj -c F:\\VSCodeWorkspace\\slimeballGraphicLib\\examples\\new_year.cpp",
+  "file": "F:/VSCodeWorkspace/slimeballGraphicLib/examples/new_year.cpp",
+  "output": "examples/CMakeFiles/new_year.exe.dir/new_year.cpp.obj"
 }
 ]

@@ -174,17 +174,17 @@ Zmultiplier/fast:
 .PHONY : Zmultiplier/fast
 
 #=============================================================================
-# Target rules for targets named test.exe
+# Target rules for targets named new_year.exe
 
 # Build rule for target.
-test.exe: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test.exe
-.PHONY : test.exe
+new_year.exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 new_year.exe
+.PHONY : new_year.exe
 
 # fast build rule for target.
-test.exe/fast:
-	$(MAKE) $(MAKESILENT) -f examples\CMakeFiles\test.exe.dir\build.make examples/CMakeFiles/test.exe.dir/build
-.PHONY : test.exe/fast
+new_year.exe/fast:
+	$(MAKE) $(MAKESILENT) -f examples\CMakeFiles\new_year.exe.dir\build.make examples/CMakeFiles/new_year.exe.dir/build
+.PHONY : new_year.exe/fast
 
 src/assets/Font.obj: src/assets/Font.cpp.obj
 .PHONY : src/assets/Font.obj
@@ -415,7 +415,7 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... Zmultiplier
-	@echo ... test.exe
+	@echo ... new_year.exe
 	@echo ... src/assets/Font.obj
 	@echo ... src/assets/Font.i
 	@echo ... src/assets/Font.s
