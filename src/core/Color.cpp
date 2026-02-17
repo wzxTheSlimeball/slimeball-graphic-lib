@@ -9,7 +9,7 @@
 Core::Color::Color(float hue,float saturation,float lightness,unsigned char alpha)
 {
     float c=(1.0f-fabs(2.0f*lightness-1.0f))*saturation;
-    float x=c*(1.0f-fabs(fmod(hue/60.0f,2)-1.0f));
+    float x=static_cast<float>(c*(1.0f-fabs(fmod(hue/60.0f,2)-1.0f)));
     float m=lightness-c/2.0f;
     float r1,g1,b1;
     if(hue>=0.0f&&hue<60.0f){

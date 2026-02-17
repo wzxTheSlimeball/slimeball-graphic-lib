@@ -3,7 +3,9 @@
 //Copyright (c) 2026 Z-Multiplier
 #include "Image.hpp"
 #include "Window.hpp"
+#include "Translation.hpp"
 #include <iostream>
+#include <cmath>
 
 namespace Assets{
     namespace{
@@ -81,7 +83,7 @@ Assets::Image::Image(const std::wstring& widePath){
 bool Assets::Image::syncData(){
     thisContent.resize(width*height);
     Gdiplus::BitmapData bmpdata;
-    Gdiplus::Rect rect(0,0,width,height);
+    Gdiplus::Rect rect(0,0,static_cast<INT>(width),static_cast<INT>(height));
     Gdiplus::Status status=thisBmp->LockBits(&rect,Gdiplus::ImageLockModeRead,PixelFormat32bppARGB,&bmpdata);
     if(status!=Gdiplus::Ok){
         thisContent.clear();
@@ -101,13 +103,13 @@ HBITMAP Assets::Image::getHBITMAP()const{
     ULONG_PTR imgWidth=thisBmp->GetWidth();
     ULONG_PTR imgHeight=thisBmp->GetHeight();
     Gdiplus::BitmapData bitmapData;
-    Gdiplus::Rect rect(0,0,imgWidth,imgHeight);
+    Gdiplus::Rect rect(0,0,static_cast<INT>(imgWidth),static_cast<INT>(imgHeight));
     if(thisBmp->LockBits(&rect,Gdiplus::ImageLockModeRead,PixelFormat32bppARGB,&bitmapData)!=Gdiplus::Ok){
         return nullptr;
     }
     BITMAPINFO bmi;
     bmi.bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
-    bmi.bmiHeader.biWidth=imgWidth;
+    bmi.bmiHeader.biWidth=static_cast<LONG>(imgWidth);
     bmi.bmiHeader.biHeight=-static_cast<LONG>(imgHeight);
     bmi.bmiHeader.biPlanes=1;
     bmi.bmiHeader.biBitCount=32;
@@ -120,7 +122,7 @@ HBITMAP Assets::Image::getHBITMAP()const{
     }
     BYTE* destRow=static_cast<BYTE*>(pBits);
     BYTE* srcRow=static_cast<BYTE*>(bitmapData.Scan0);
-    LONG destStride=static_cast<LONG>(imgWidth) * 4;
+    LONG destStride=static_cast<LONG>(imgWidth)*4;
     LONG srcStride=bitmapData.Stride;
     for(ULONG_PTR y=0;y<imgHeight;++y){
         LONG copyBytes=std::min(destStride,abs(srcStride));
@@ -148,14 +150,14 @@ HBITMAP Assets::saveScreenAsHBITMAP(HWND targetHWnd){
     ReleaseDC(NULL,hdcScreen);
     return bRet?hBitmap:NULL;
 }
-static int GetEncoderClsid(const WCHAR* mimeType, CLSID* pClsid)
+static int GetEncoderClsid(const WCHAR* mimeType,CLSID* pClsid)
 {
     UINT num=0;
     UINT size=0;
-    Gdiplus::GetImageEncodersSize(&num, &size);
-    if(size == 0) return -1;
-    Gdiplus::ImageCodecInfo* pImageCodecInfo = (Gdiplus::ImageCodecInfo*)(malloc(size));
-    if(pImageCodecInfo == NULL) return -1;
+    Gdiplus::GetImageEncodersSize(&num,&size);
+    if(size==0) return -1;
+    Gdiplus::ImageCodecInfo* pImageCodecInfo=(Gdiplus::ImageCodecInfo*)(malloc(size));
+    if(pImageCodecInfo==NULL) return -1;
     Gdiplus::GetImageEncoders(num,size,pImageCodecInfo);
     for(UINT j=0;j<num;++j)
     {
@@ -274,4 +276,117 @@ bool Assets::saveScreen(HWND targetHWnd,std::wstring fileName,std::wstring type)
     delete bmp;
     DeleteObject(hBmp);
     return status==Gdiplus::Ok;
+}
+void Assets::Image::transformation(bool usingGDIplus){
+    if(this->width==0||this->height==0) return;
+    if(!thisBmp) return;
+    INT w=static_cast<INT>(this->width);
+    INT h=static_cast<INT>(this->height);
+    std::vector<Core::Color> srcPixels;
+    srcPixels.resize(static_cast<size_t>(w)*static_cast<size_t>(h));
+    Gdiplus::BitmapData bmpdata;
+    Gdiplus::Rect fullRect(0,0,w,h);
+    if(thisBmp->LockBits(&fullRect,Gdiplus::ImageLockModeRead,PixelFormat32bppARGB,&bmpdata)!=Gdiplus::Ok){
+        return;
+    }
+    for(INT row=0;row<h;++row){
+        intptr_t offset=static_cast<intptr_t>(row)*static_cast<intptr_t>(bmpdata.Stride);
+        BYTE *rowPtr=reinterpret_cast<BYTE*>(bmpdata.Scan0)+offset;
+        for(INT col=0;col<w;++col){
+            unsigned int px=*reinterpret_cast<unsigned int*>(rowPtr+col*4);
+            srcPixels[static_cast<size_t>(row)*static_cast<size_t>(w)+static_cast<size_t>(col)]=Core::Color(px);
+        }
+    }
+    thisBmp->UnlockBits(&bmpdata);
+    thisContent.clear();
+    double cx=(static_cast<double>(w))*0.5;
+    double cy=(static_cast<double>(h))*0.5;
+    double a1=matrix.a1;double a2=matrix.a2;
+    double b1=matrix.b1;double b2=matrix.b2;
+    double cornersX[4]={0.0,static_cast<double>(w),0.0,static_cast<double>(w)};
+    double cornersY[4]={0.0,0.0,static_cast<double>(h),static_cast<double>(h)};
+    double minTx=1e300,minTy=1e300,maxTx=-1e300,maxTy=-1e300;
+    for(int i=0;i<4;++i){
+        double ox=cornersX[i]-cx;
+        double oy=cornersY[i]-cy;
+        double tx=a1*ox+a2*oy;
+        double ty=b1*ox+b2*oy;
+        if(tx<minTx) minTx=tx;
+        if(tx>maxTx) maxTx=tx;
+        if(ty<minTy) minTy=ty;
+        if(ty>maxTy) maxTy=ty;
+    }
+    int destW=static_cast<int>(std::ceil(maxTx-minTx));
+    int destH=static_cast<int>(std::ceil(maxTy-minTy));
+    if(destW<=0) destW=w;
+    if(destH<=0) destH=h;
+    double mcx=a1*cx+a2*cy;
+    double mcy=b1*cx+b2*cy;
+    double dx=-mcx-minTx;
+    double dy=-mcy-minTy;
+    if(usingGDIplus){
+        Gdiplus::Matrix gm;
+        gm.SetElements(static_cast<Gdiplus::REAL>(a1),static_cast<Gdiplus::REAL>(a2),
+                       static_cast<Gdiplus::REAL>(b1),static_cast<Gdiplus::REAL>(b2),
+                       static_cast<Gdiplus::REAL>(dx),static_cast<Gdiplus::REAL>(dy));
+        Gdiplus::Bitmap *dest=new Gdiplus::Bitmap(destW,destH,PixelFormat32bppARGB);
+        Gdiplus::Graphics g(dest);
+        g.SetInterpolationMode(Gdiplus::InterpolationModeHighQualityBicubic);
+        g.SetTransform(&gm);
+        g.DrawImage(thisBmp,0,0);
+        if(thisBmp) {delete thisBmp;}
+        thisBmp=dest;
+        this->width=static_cast<unsigned long long>(destW);
+        this->height=static_cast<unsigned long long>(destH);
+        if(thisHBITMAP){ DeleteObject(thisHBITMAP);thisHBITMAP=nullptr;}
+        return;
+    }
+    double det=a1*b2-a2*b1;
+    if(det==0.0){
+        return;
+    }
+    double ia1=b2/det;
+    double ia2=-a2/det;
+    double ib1=-b1/det;
+    double ib2=a1/det;
+    std::vector<Core::Color> dstPixels(static_cast<size_t>(destW)*static_cast<size_t>(destH));
+    for(int y=0;y<destH;++y){
+        for(int x=0;x<destW;++x){
+            double dx_local=static_cast<double>(x)+minTx;
+            double dy_local=static_cast<double>(y)+minTy;
+            double srcX=cx+(ia1*dx_local+ia2*dy_local);
+            double srcY=cy+(ib1*dx_local+ib2*dy_local);
+            int ix=static_cast<int>(std::floor(srcX+0.5));
+            int iy=static_cast<int>(std::floor(srcY+0.5));
+            Core::Color px;
+            if(ix>=0&&ix<w&&iy>=0&&iy<h){
+                px=srcPixels[static_cast<size_t>(iy)*static_cast<size_t>(w)+static_cast<size_t>(ix)];
+            }else{
+                px=Core::Color((unsigned char)0,0,0,0);
+            }
+            dstPixels[static_cast<size_t>(y)*static_cast<size_t>(destW)+static_cast<size_t>(x)]=px;
+        }
+    }
+    Gdiplus::Bitmap* destBmp=new Gdiplus::Bitmap(destW,destH,PixelFormat32bppARGB);
+    Gdiplus::BitmapData destData;
+    Gdiplus::Rect destRect(0,0,destW,destH);
+    if(destBmp->LockBits(&destRect,Gdiplus::ImageLockModeWrite,PixelFormat32bppARGB,&destData)==Gdiplus::Ok){
+        for(int row=0;row<destH;++row){
+            intptr_t off=static_cast<intptr_t>(row)*static_cast<intptr_t>(destData.Stride);
+            BYTE* dstRow=reinterpret_cast<BYTE*>(destData.Scan0)+off;
+            for(int col=0;col<destW;++col){
+                Core::Color c=dstPixels[static_cast<size_t>(row)*static_cast<size_t>(destW)+static_cast<size_t>(col)];
+                unsigned int packed=(static_cast<unsigned int>(c.a)<<24)|(static_cast<unsigned int>(c.r)<<16)|(static_cast<unsigned int>(c.g)<<8)|(static_cast<unsigned int>(c.b));
+                *reinterpret_cast<unsigned int*>(dstRow+col*4)=packed;
+            }
+        }
+        destBmp->UnlockBits(&destData);
+        if(thisBmp) delete thisBmp;
+        thisBmp=destBmp;
+        this->width=static_cast<unsigned long long>(destW);
+        this->height=static_cast<unsigned long long>(destH);
+        if(thisHBITMAP){ DeleteObject(thisHBITMAP);thisHBITMAP=nullptr;}
+    }else{
+        delete destBmp;
+    }
 }

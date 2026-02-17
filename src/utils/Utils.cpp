@@ -8,6 +8,6 @@
 namespace Utils{
     BOOL classIsRegistered(const wchar_t *CLASSNAME){
         WNDCLASSEX wc={};
-        return GetClassInfoEx(NULL,CLASSNAME,&wc);//艹
+        return GetClassInfoEx(NULL,CLASSNAME,&wc);
     }
 }

@@ -10,6 +10,7 @@ examples/CMakeFiles/test.exe.dir/test.cpp.obj: F:/VSCodeWorkspace/Z-MultiplierLi
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Logger.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp \
+  F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Window.hpp \
   F:/msys64/ucrt64/include/_bsd_types.h \
@@ -588,6 +589,10 @@ F:/msys64/ucrt64/include/c++/15.2.0/typeinfo:
 F:/msys64/ucrt64/include/_mingw.h:
 
 F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp:
+
+F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86intrin.h:
+
+F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp:
 
 F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2-512mediaintrin.h:
 
@@ -1526,8 +1531,6 @@ F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/vaesintrin.h:
 F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/wbnoinvdintrin.h:
 
 F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/wmmintrin.h:
-
-F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86intrin.h:
 
 F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xmmintrin.h:
 

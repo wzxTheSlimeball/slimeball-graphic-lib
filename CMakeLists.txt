@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(Zmultiplier VERSION 1.0.0 LANGUAGES CXX)
+project(ZmultiplierLib VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -16,7 +16,7 @@ else()
     add_compile_options(-Wall -Wextra -pedantic)
 endif()
 
-add_library(Zmultiplier STATIC
+add_library(ZmultiplierLib STATIC
     src/core/Color.cpp
     src/core/Canvas.cpp
     src/window/Window.cpp
@@ -26,31 +26,32 @@ add_library(Zmultiplier STATIC
     src/core/EntryPoint.cpp
     src/assets/Image.cpp
     src/assets/Font.cpp
+    src/assets/Translation.cpp
 )
 
-target_link_libraries(Zmultiplier PRIVATE
+target_link_libraries(ZmultiplierLib PRIVATE
     msimg32
     gdi32
     user32
     gdiplus
 )
 
-target_include_directories(Zmultiplier PUBLIC
+target_include_directories(ZmultiplierLib PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
 
 if(WIN32)
-    target_compile_definitions(Zmultiplier PRIVATE NOMINMAX)
-    target_link_libraries(Zmultiplier PRIVATE gdi32 user32)
+    target_compile_definitions(ZmultiplierLib PRIVATE NOMINMAX)
+    target_link_libraries(ZmultiplierLib PRIVATE gdi32 user32)
 endif()
 
-install(TARGETS Zmultiplier
+install(TARGETS ZmultiplierLib
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
 )
 
-install(DIRECTORY include/Zmultiplier DESTINATION include)
+install(DIRECTORY include/ZmultiplierLib DESTINATION include)
 
 add_subdirectory(examples)

@@ -45,7 +45,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 31,
+				"line" : 32,
 				"parent" : 3
 			},
 			{
@@ -103,7 +103,7 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "Zmultiplier::@6890427a1f51a3e7e1df"
+			"id" : "ZmultiplierLib::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "test.exe::@714eac15f71a94114fdf",
@@ -117,7 +117,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "..\\lib\\libZmultiplier.a",
+				"fragment" : "..\\lib\\libZmultiplierLib.a",
 				"role" : "libraries"
 			},
 			{

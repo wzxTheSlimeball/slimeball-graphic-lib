@@ -351,15 +351,15 @@ bool Window::Painter::solidPolygon(const vector<Point>& points,const Core::Color
     }
     return true;
 }
-bool Window::Painter::hollowCircle(const Window::Point& origin,int radius,const Core::Color& color){
+bool Window::Painter::hollowCircle(const Window::Point& origin,int r,const Core::Color& color){
     auto insideWindow=[this](int tx,int ty){
         return tx>=0&&tx<thisBindHandle->getRect().right&&ty>=0&&ty<thisBindHandle->getRect().bottom;
     };
     int ox=origin.x;
     int oy=origin.y;
     int x=0;
-    int y=radius;
-    int d=1-radius;
+    int y=r;
+    int d=1-r;
     while(x<=y){
         if(insideWindow(ox+x,oy+y))
         putUnitPixel(ox+x,oy+y,color);
@@ -388,17 +388,17 @@ bool Window::Painter::hollowCircle(const Window::Point& origin,int radius,const 
     }
     return true;
 }
-bool Window::Painter::solidCircle(const Point& origin,int radius,const Core::Color& color){
-    if(radius<0) return false;
+bool Window::Painter::solidCircle(const Point& origin,int r,const Core::Color& color){
+    if(r<0) return false;
     int ox=origin.x;
     int oy=origin.y;
     int width=this->thisBindHandle->getRect().right;
     int height=this->thisBindHandle->getRect().bottom;
     if(width<=0||height<=0) return false;
-    for(int dy=-radius;dy<=radius;++dy){
+    for(int dy=-r;dy<=r;++dy){
         int y=oy+dy;
         if(y<0||y>=height) continue;
-        int dx=static_cast<int>(std::floor(std::sqrt((double)radius*radius - (double)dy*dy)));
+        int dx=static_cast<int>(std::floor(std::sqrt((double)r*r - (double)dy*dy)));
         int xStart=ox-dx;
         int xEnd=ox+dx;
         if(xEnd<0||xStart>=width) continue;
@@ -406,30 +406,30 @@ bool Window::Painter::solidCircle(const Point& origin,int radius,const Core::Col
         if(xEnd>=width) xEnd=width-1;
         if(!alphaBlender(xStart,y,xEnd-xStart+1,1,color)) return false;
     }
-    return hollowCircle(origin,radius,color);
+    return hollowCircle(origin,r,color);
 }
-Window::Point calculateDrawPosition(char locateMode,Window::Point locator,unsigned long long width,unsigned long long height){
+static Window::Point calculateDrawPosition(char locateMode,Window::Point locator,unsigned long long width,unsigned long long height){
     Window::Point result={locator.x,locator.y};
     switch(locateMode){
         case LOCATEMODE_CENTER:{
-            result.x-=width/2;
-            result.y-=height/2;
+            result.x-=static_cast<int>(width)/2;
+            result.y-=static_cast<int>(height)/2;
             break;
         }
         case LOCATEMODE_LEFTUPCORNER:{
             break;
         }
         case LOCATEMODE_RIGHTUPCORNER:{
-            result.x-=width;
+            result.x-=static_cast<int>(width);
             break;
         }
         case LOCATEMODE_LEFTBOTTOMCORNER:{
-            result.y-=height;
+            result.y-=static_cast<int>(height);
             break;
         }
         case LOCATEMODE_RIGHTBOTTOMCORNER:{
-            result.x-=width;
-            result.y-=height;
+            result.x-=static_cast<int>(width);
+            result.y-=static_cast<int>(height);
             break;
         }
         default:{
@@ -438,7 +438,7 @@ Window::Point calculateDrawPosition(char locateMode,Window::Point locator,unsign
     }
     return result;
 }
-bool Window::Painter::putImage(char locateMode,const Point& locator,const Assets::Image& src,unsigned char alpha){
+bool Window::Painter::putImage(char locateMode,const Point& locator,const Assets::Image& src,unsigned char alpha)const{
     if(!thisHDC){
         PainterLogger.traceLog(Core::logger::LOG_WARNING,"This painter doesn't have an hdc yet");
         return false;
@@ -461,10 +461,10 @@ bool Window::Painter::putImage(char locateMode,const Point& locator,const Assets
     BOOL result=AlphaBlend(
         thisHDC,
         drawPos.x,drawPos.y,
-        width,height,
+        static_cast<int>(width),static_cast<int>(height),
         hdcMem,
         0,0,
-        width,height,
+        static_cast<int>(width),static_cast<int>(height),
         bf
     );
     SelectObject(hdcMem, hOldBitmap);
@@ -476,20 +476,20 @@ bool Window::Painter::putText(char locateMode,const Point& locator,const Assets:
     TEXTMETRIC tm;
     SIZE size;
     GetTextMetrics(this->thisHDC,&tm);
-    GetTextExtentPoint32W(this->thisHDC,text.c_str(),text.length(),&size);
+    GetTextExtentPoint32W(this->thisHDC,text.c_str(),static_cast<int>(text.length()),&size);
     SetTextColor(this->thisHDC,color.toCOLORREF());
     SetBkMode(this->thisHDC,TRANSPARENT);
     Point locate=calculateDrawPosition(locateMode,locator,size.cx,size.cy);
-    TextOutW(this->thisHDC,locate.x,locate.y,text.c_str(),text.length());
+    TextOutW(this->thisHDC,locate.x,locate.y,text.c_str(),static_cast<int>(text.length()));
     return true;
 }
 Window::Point calcBezierPoint(double t,const vector<Window::Point>& vec){
     std::vector<Window::Point> temp=vec;
-    int n=temp.size();
+    int n=static_cast<int>(temp.size());
     for(int r=1;r<n;++r){
         for(int i=0;i<n-r;++i){
-            temp[i].x=(1-t)*temp[i].x+t*temp[i+1].x;
-            temp[i].y=(1-t)*temp[i].y+t*temp[i+1].y;
+            temp[i].x=static_cast<int>((1-t)*temp[i].x+t*temp[i+1].x);
+            temp[i].y=static_cast<int>((1-t)*temp[i].y+t*temp[i+1].y);
         }
     }
     return temp[0];
@@ -522,7 +522,7 @@ bool Window::Painter::bezierCurve(const vector<Point>& points,int accuracy,const
 bool Window::Painter::hollowEllipse(Point center,int rX,int rY,const Core::Color& color){
     int x=0;
     int y=rY;
-    float d1=rY*rY-rX*rX*rY+0.25*rX*rX;
+    float d1=static_cast<float>(rY*rY-rX*rX*rY+0.25*rX*rX);
     auto putfourPixel=[this](int cx,int cy,int x,int y,const Core::Color& color)
     {
         bool result=putPixel(cx+x,cy+y,color);
@@ -544,12 +544,12 @@ bool Window::Painter::hollowEllipse(Point center,int rX,int rY,const Core::Color
             y--;
         }
         x++;
-        bool result=putfourPixel(center.x,center.y,x,y,color);
-        if(!result){
+        bool resultInside=putfourPixel(center.x,center.y,x,y,color);
+        if(!resultInside){
             return false;
         }
     }
-    float d2=rY*rY*(x+0.5)*(x+0.5)+rX*rX*(y-1)*(y-1)-rX*rX*rY*rY;
+    float d2=static_cast<float>(rY*rY*(x+0.5)*(x+0.5)+rX*rX*(y-1)*(y-1)-rX*rX*rY*rY);
     while(y>0){
         if(d2>0){
             d2+=-2*rX*rX*(y-1)+rX*rX;
@@ -559,8 +559,8 @@ bool Window::Painter::hollowEllipse(Point center,int rX,int rY,const Core::Color
             x++;
         }
         y--;
-        bool result=putfourPixel(center.x,center.y,x,y,color);
-        if(!result){
+        bool resultInside=putfourPixel(center.x,center.y,x,y,color);
+        if(!resultInside){
             return false;
         }
     }
@@ -569,7 +569,7 @@ bool Window::Painter::hollowEllipse(Point center,int rX,int rY,const Core::Color
 bool Window::Painter::solidEllipse(Point center,int rX,int rY,const Core::Color& color){
     int x=0;
     int y=rY;
-    float d1=rY*rY-rX*rX*rY+0.25*rX*rX;
+    float d1=static_cast<float>(rY*rY-rX*rX*rY+0.25*rX*rX);
     auto putfourPixel=[this](int cx,int cy,int x,int y,const Core::Color& color)
     {
         bool result=line(Point(cx+x,cy+y),Point(cx-x,cy+y),color);
@@ -593,12 +593,12 @@ bool Window::Painter::solidEllipse(Point center,int rX,int rY,const Core::Color&
             y--;
         }
         x++;
-        bool result=putfourPixel(center.x,center.y,x,y,color);
-        if(!result){
+        bool resultInside=putfourPixel(center.x,center.y,x,y,color);
+        if(!resultInside){
             return false;
         }
     }
-    float d2=rY*rY*(x+0.5)*(x+0.5)+rX*rX*(y-1)*(y-1)-rX*rX*rY*rY;
+    float d2=static_cast<float>(rY*rY*(x+0.5)*(x+0.5)+rX*rX*(y-1)*(y-1)-rX*rX*rY*rY);
     while(y>0){
         if(d2>0){
             d2+=-2*rX*rX*(y-1)+rX*rX;
@@ -608,8 +608,8 @@ bool Window::Painter::solidEllipse(Point center,int rX,int rY,const Core::Color&
             x++;
         }
         y--;
-        bool result=putfourPixel(center.x,center.y,x,y,color);
-        if(!result){
+        bool resultInside=putfourPixel(center.x,center.y,x,y,color);
+        if(!resultInside){
             return false;
         }
     }

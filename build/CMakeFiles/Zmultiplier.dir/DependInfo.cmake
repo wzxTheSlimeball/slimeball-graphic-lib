@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Font.cpp" "CMakeFiles/Zmultiplier.dir/src/assets/Font.cpp.obj" "gcc" "CMakeFiles/Zmultiplier.dir/src/assets/Font.cpp.obj.d"
   "F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Image.cpp" "CMakeFiles/Zmultiplier.dir/src/assets/Image.cpp.obj" "gcc" "CMakeFiles/Zmultiplier.dir/src/assets/Image.cpp.obj.d"
+  "F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Translation.cpp" "CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj" "gcc" "CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj.d"
   "F:/VSCodeWorkspace/Z-MultiplierLib/src/core/Canvas.cpp" "CMakeFiles/Zmultiplier.dir/src/core/Canvas.cpp.obj" "gcc" "CMakeFiles/Zmultiplier.dir/src/core/Canvas.cpp.obj.d"
   "F:/VSCodeWorkspace/Z-MultiplierLib/src/core/Color.cpp" "CMakeFiles/Zmultiplier.dir/src/core/Color.cpp.obj" "gcc" "CMakeFiles/Zmultiplier.dir/src/core/Color.cpp.obj.d"
   "F:/VSCodeWorkspace/Z-MultiplierLib/src/core/EntryPoint.cpp" "CMakeFiles/Zmultiplier.dir/src/core/EntryPoint.cpp.obj" "gcc" "CMakeFiles/Zmultiplier.dir/src/core/EntryPoint.cpp.obj.d"

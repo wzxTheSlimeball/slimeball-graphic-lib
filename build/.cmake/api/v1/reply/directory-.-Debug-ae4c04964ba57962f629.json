@@ -17,13 +17,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 48,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 54,
+				"line" : 55,
 				"parent" : 0
 			}
 		]
@@ -36,9 +36,9 @@
 			"destination" : "lib",
 			"paths" : 
 			[
-				"lib/libZmultiplier.a"
+				"lib/libZmultiplierLib.a"
 			],
-			"targetId" : "Zmultiplier::@6890427a1f51a3e7e1df",
+			"targetId" : "ZmultiplierLib::@6890427a1f51a3e7e1df",
 			"targetIndex" : 0,
 			"type" : "target"
 		},
@@ -48,7 +48,7 @@
 			"destination" : "include",
 			"paths" : 
 			[
-				"include/Zmultiplier"
+				"include/ZmultiplierLib"
 			],
 			"type" : "directory"
 		}

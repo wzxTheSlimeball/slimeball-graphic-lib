@@ -415,6 +415,7 @@ CMakeFiles/Zmultiplier.dir/src/utils/Utils.cpp.obj: \
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp \
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp \
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp \
+ F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp \
  F:/msys64/ucrt64/include/gdiplus.h \
  F:/msys64/ucrt64/include/gdiplus/gdiplus.h \
  F:/msys64/ucrt64/include/c++/15.2.0/math.h \

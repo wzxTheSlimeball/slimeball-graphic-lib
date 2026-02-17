@@ -5,7 +5,7 @@
 #include <windows.h>
 HINSTANCE mainHInstance;
 
-BOOL SetHighDPIAwareness() {
+/*BOOL SetHighDPIAwareness() {
     HMODULE hUser32=LoadLibraryA("user32.dll");
     if (hUser32){
         typedef BOOL (WINAPI *SetProcessDpiAwarenessContextProc)(HANDLE);
@@ -16,13 +16,16 @@ BOOL SetHighDPIAwareness() {
         FreeLibrary(hUser32);
     }
     return FALSE;
-}
+}*/
 
 extern int main();
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PSTR lpCmdLine,int nCmdShow)
 {
-    SetHighDPIAwareness();
+    //SetHighDPIAwareness();
+    nCmdShow;
+    lpCmdLine;
+    hPrevInstance;
     mainHInstance=hInstance;
     return main();
 }

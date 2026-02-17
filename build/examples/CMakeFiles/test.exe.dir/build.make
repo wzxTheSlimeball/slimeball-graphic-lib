@@ -95,7 +95,7 @@ test_exe_EXTERNAL_OBJECTS =
 
 bin/test.exe.exe: examples/CMakeFiles/test.exe.dir/test.cpp.obj
 bin/test.exe.exe: examples/CMakeFiles/test.exe.dir/build.make
-bin/test.exe.exe: lib/libZmultiplier.a
+bin/test.exe.exe: lib/libZmultiplierLib.a
 bin/test.exe.exe: examples/CMakeFiles/test.exe.dir/linkLibs.rsp
 bin/test.exe.exe: examples/CMakeFiles/test.exe.dir/objects1.rsp
 bin/test.exe.exe: examples/CMakeFiles/test.exe.dir/link.txt

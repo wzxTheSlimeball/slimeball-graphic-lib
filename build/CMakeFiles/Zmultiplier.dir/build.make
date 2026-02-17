@@ -206,6 +206,21 @@ CMakeFiles/Zmultiplier.dir/src/assets/Font.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Zmultiplier.dir/src/assets/Font.cpp.s"
 	F:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\VSCodeWorkspace\Z-MultiplierLib\src\assets\Font.cpp -o CMakeFiles\Zmultiplier.dir\src\assets\Font.cpp.s
 
+CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj: CMakeFiles/Zmultiplier.dir/flags.make
+CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj: CMakeFiles/Zmultiplier.dir/includes_CXX.rsp
+CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj: F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Translation.cpp
+CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj: CMakeFiles/Zmultiplier.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=F:\VSCodeWorkspace\Z-MultiplierLib\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj"
+	F:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj -MF CMakeFiles\Zmultiplier.dir\src\assets\Translation.cpp.obj.d -o CMakeFiles\Zmultiplier.dir\src\assets\Translation.cpp.obj -c F:\VSCodeWorkspace\Z-MultiplierLib\src\assets\Translation.cpp
+
+CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.i"
+	F:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\VSCodeWorkspace\Z-MultiplierLib\src\assets\Translation.cpp > CMakeFiles\Zmultiplier.dir\src\assets\Translation.cpp.i
+
+CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.s"
+	F:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\VSCodeWorkspace\Z-MultiplierLib\src\assets\Translation.cpp -o CMakeFiles\Zmultiplier.dir\src\assets\Translation.cpp.s
+
 # Object files for target Zmultiplier
 Zmultiplier_OBJECTS = \
 "CMakeFiles/Zmultiplier.dir/src/core/Color.cpp.obj" \
@@ -216,7 +231,8 @@ Zmultiplier_OBJECTS = \
 "CMakeFiles/Zmultiplier.dir/src/painter/Painter.cpp.obj" \
 "CMakeFiles/Zmultiplier.dir/src/core/EntryPoint.cpp.obj" \
 "CMakeFiles/Zmultiplier.dir/src/assets/Image.cpp.obj" \
-"CMakeFiles/Zmultiplier.dir/src/assets/Font.cpp.obj"
+"CMakeFiles/Zmultiplier.dir/src/assets/Font.cpp.obj" \
+"CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj"
 
 # External object files for target Zmultiplier
 Zmultiplier_EXTERNAL_OBJECTS =
@@ -230,9 +246,10 @@ lib/libZmultiplier.a: CMakeFiles/Zmultiplier.dir/src/painter/Painter.cpp.obj
 lib/libZmultiplier.a: CMakeFiles/Zmultiplier.dir/src/core/EntryPoint.cpp.obj
 lib/libZmultiplier.a: CMakeFiles/Zmultiplier.dir/src/assets/Image.cpp.obj
 lib/libZmultiplier.a: CMakeFiles/Zmultiplier.dir/src/assets/Font.cpp.obj
+lib/libZmultiplier.a: CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj
 lib/libZmultiplier.a: CMakeFiles/Zmultiplier.dir/build.make
 lib/libZmultiplier.a: CMakeFiles/Zmultiplier.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=F:\VSCodeWorkspace\Z-MultiplierLib\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library lib\libZmultiplier.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=F:\VSCodeWorkspace\Z-MultiplierLib\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library lib\libZmultiplier.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\Zmultiplier.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Zmultiplier.dir\link.txt --verbose=$(VERBOSE)
 

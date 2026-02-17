@@ -104,7 +104,7 @@ namespace Window{
             bool solidPolygon(const vector<Point>& points,const Core::Color& color);
             bool hollowCircle(const Point& origin,int radius,const Core::Color& color);
             bool solidCircle(const Point& origin,int radius,const Core::Color& color);
-            bool putImage(char locateMode,const Point& locator,const Assets::Image& src,unsigned char alpha);
+            bool putImage(char locateMode,const Point& locator,const Assets::Image& src,unsigned char alpha)const;
             bool putText(char locateMode,const Point& locator,const Assets::Font& font,const std::wstring& text,const Core::Color& color);
             bool bezierCurve(const vector<Point>& points,int accuracy,const Core::Color& color);
             bool hollowEllipse(Point center,int rX,int rY,const Core::Color& color);

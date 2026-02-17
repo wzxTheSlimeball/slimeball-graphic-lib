@@ -783,7 +783,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Zmultiplier"
+			"value" : "ZmultiplierLib"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1236,6 +1236,42 @@
 			],
 			"type" : "BOOL",
 			"value" : "FALSE"
+		},
+		{
+			"name" : "ZmultiplierLib_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "F:/VSCodeWorkspace/Z-MultiplierLib/build"
+		},
+		{
+			"name" : "ZmultiplierLib_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "ZmultiplierLib_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "F:/VSCodeWorkspace/Z-MultiplierLib"
 		},
 		{
 			"name" : "Zmultiplier_BINARY_DIR",

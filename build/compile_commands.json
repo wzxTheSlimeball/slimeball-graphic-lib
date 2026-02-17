@@ -1,57 +1,63 @@
 [
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/Zmultiplier.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\Zmultiplier.dir\\src\\core\\Color.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\core\\Color.cpp",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\core\\Color.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\core\\Color.cpp",
   "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/core/Color.cpp",
-  "output": "CMakeFiles/Zmultiplier.dir/src/core/Color.cpp.obj"
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/core/Color.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/Zmultiplier.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\Zmultiplier.dir\\src\\core\\Canvas.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\core\\Canvas.cpp",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\core\\Canvas.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\core\\Canvas.cpp",
   "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/core/Canvas.cpp",
-  "output": "CMakeFiles/Zmultiplier.dir/src/core/Canvas.cpp.obj"
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/core/Canvas.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/Zmultiplier.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\Zmultiplier.dir\\src\\window\\Window.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\window\\Window.cpp",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\window\\Window.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\window\\Window.cpp",
   "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/window/Window.cpp",
-  "output": "CMakeFiles/Zmultiplier.dir/src/window/Window.cpp.obj"
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/window/Window.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/Zmultiplier.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\Zmultiplier.dir\\src\\core\\Logger.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\core\\Logger.cpp",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\core\\Logger.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\core\\Logger.cpp",
   "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/core/Logger.cpp",
-  "output": "CMakeFiles/Zmultiplier.dir/src/core/Logger.cpp.obj"
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/core/Logger.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/Zmultiplier.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\Zmultiplier.dir\\src\\utils\\Utils.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\utils\\Utils.cpp",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\utils\\Utils.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\utils\\Utils.cpp",
   "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/utils/Utils.cpp",
-  "output": "CMakeFiles/Zmultiplier.dir/src/utils/Utils.cpp.obj"
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/utils/Utils.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/Zmultiplier.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\Zmultiplier.dir\\src\\painter\\Painter.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\painter\\Painter.cpp",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\painter\\Painter.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\painter\\Painter.cpp",
   "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/painter/Painter.cpp",
-  "output": "CMakeFiles/Zmultiplier.dir/src/painter/Painter.cpp.obj"
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/painter/Painter.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/Zmultiplier.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\Zmultiplier.dir\\src\\core\\EntryPoint.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\core\\EntryPoint.cpp",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\core\\EntryPoint.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\core\\EntryPoint.cpp",
   "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/core/EntryPoint.cpp",
-  "output": "CMakeFiles/Zmultiplier.dir/src/core/EntryPoint.cpp.obj"
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/core/EntryPoint.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/Zmultiplier.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\Zmultiplier.dir\\src\\assets\\Image.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\assets\\Image.cpp",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\assets\\Image.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\assets\\Image.cpp",
   "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Image.cpp",
-  "output": "CMakeFiles/Zmultiplier.dir/src/assets/Image.cpp.obj"
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/assets/Image.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/Zmultiplier.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\Zmultiplier.dir\\src\\assets\\Font.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\assets\\Font.cpp",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\assets\\Font.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\assets\\Font.cpp",
   "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Font.cpp",
-  "output": "CMakeFiles/Zmultiplier.dir/src/assets/Font.cpp.obj"
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/assets/Font.cpp.obj"
+},
+{
+  "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\assets\\Translation.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\assets\\Translation.cpp",
+  "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Translation.cpp",
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/assets/Translation.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build/examples",

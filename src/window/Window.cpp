@@ -401,7 +401,7 @@ namespace Window{
                 return pThis->thisHit(hWnd,uMsg,wParam,lParam,hitPos.x,hitPos.y,hit);
             }
             case WM_DPICHANGED:{
-                UINT newDpi=LOWORD(wParam);
+                //UINT newDpi=LOWORD(wParam);
                 RECT* prcNewWindow=(RECT*)lParam;
                 SetWindowPos(hWnd,NULL,prcNewWindow->left,prcNewWindow->top,prcNewWindow->right-prcNewWindow->left,prcNewWindow->bottom-prcNewWindow->top,SWP_NOZORDER|SWP_NOACTIVATE);
                 return 0;

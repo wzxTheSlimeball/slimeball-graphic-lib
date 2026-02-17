@@ -4,6 +4,7 @@
 #ifndef IMAGE_HPP
 #define IMAGE_HPP
 #include "Color.hpp"
+#include "Translation.hpp"
 #include <windows.h>
 #include <string>
 #include <vector>
@@ -18,6 +19,8 @@ namespace Assets{
             std::vector<Core::Color> thisContent;
             mutable HBITMAP thisHBITMAP;
         public:
+            Assets::Matrix matrix;
+            Gdiplus::Matrix GDImatrix;
             Image();
             Image(const std::wstring& widePath);
             Image(const Image& other)=delete;
@@ -29,6 +32,7 @@ namespace Assets{
             unsigned long long getHeight() const;
             bool syncData();
             HBITMAP getHBITMAP() const;
+            void transformation(bool usingGDIplus);
     };
     HBITMAP saveScreenAsHBITMAP(HWND targetHWnd);
     bool saveScreen(HWND targetHWnd,std::wstring fileName,std::wstring type);

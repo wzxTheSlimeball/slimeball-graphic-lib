@@ -401,6 +401,7 @@ CMakeFiles/Zmultiplier.dir/src/painter/Painter.cpp.obj: \
  F:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
  F:/msys64/ucrt64/include/c++/15.2.0/chrono \
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp \
+ F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp \
  F:/msys64/ucrt64/include/gdiplus.h \
  F:/msys64/ucrt64/include/gdiplus/gdiplus.h \
  F:/msys64/ucrt64/include/c++/15.2.0/math.h \

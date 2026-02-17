@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Zmultiplier.dir/src/assets/Font.cpp.obj.d"
   "CMakeFiles/Zmultiplier.dir/src/assets/Image.cpp.obj"
   "CMakeFiles/Zmultiplier.dir/src/assets/Image.cpp.obj.d"
+  "CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj"
+  "CMakeFiles/Zmultiplier.dir/src/assets/Translation.cpp.obj.d"
   "CMakeFiles/Zmultiplier.dir/src/core/Canvas.cpp.obj"
   "CMakeFiles/Zmultiplier.dir/src/core/Canvas.cpp.obj.d"
   "CMakeFiles/Zmultiplier.dir/src/core/Color.cpp.obj"
