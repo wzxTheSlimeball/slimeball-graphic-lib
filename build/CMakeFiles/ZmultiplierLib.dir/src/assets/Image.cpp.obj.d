@@ -249,7 +249,7 @@ CMakeFiles/ZmultiplierLib.dir/src/assets/Image.cpp.obj: \
  F:/msys64/ucrt64/include/sec_api/stralign_s.h \
  F:/msys64/ucrt64/include/winsvc.h F:/msys64/ucrt64/include/mcx.h \
  F:/msys64/ucrt64/include/imm.h \
- F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp \
+ F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp \
  F:/msys64/ucrt64/include/c++/15.2.0/string \
  F:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
  F:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
@@ -462,4 +462,4 @@ CMakeFiles/ZmultiplierLib.dir/src/assets/Image.cpp.obj: \
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp \
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp \
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Font.hpp \
- F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp
+ F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp

@@ -376,7 +376,7 @@ CMakeFiles/ZmultiplierLib.dir/src/assets/Image.cpp.obj: F:/VSCodeWorkspace/Z-Mul
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Logger.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp \
-  F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp \
+  F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Window.hpp \
   F:/msys64/ucrt64/include/_bsd_types.h \
@@ -879,8 +879,8 @@ CMakeFiles/ZmultiplierLib.dir/src/assets/Image.cpp.obj: F:/VSCodeWorkspace/Z-Mul
   F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xsavesintrin.h \
   F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xtestintrin.h
 
-CMakeFiles/ZmultiplierLib.dir/src/assets/Translation.cpp.obj: F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Translation.cpp \
-  F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp \
+CMakeFiles/ZmultiplierLib.dir/src/assets/Transformation.cpp.obj: F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Transformation.cpp \
+  F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp \
   F:/msys64/ucrt64/include/_mingw.h \
   F:/msys64/ucrt64/include/_mingw_mac.h \
   F:/msys64/ucrt64/include/_mingw_secapi.h \
@@ -2211,7 +2211,7 @@ CMakeFiles/ZmultiplierLib.dir/src/painter/Painter.cpp.obj: F:/VSCodeWorkspace/Z-
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Logger.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp \
-  F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp \
+  F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Window.hpp \
   F:/msys64/ucrt64/include/_bsd_types.h \
@@ -2739,7 +2739,7 @@ CMakeFiles/ZmultiplierLib.dir/src/utils/Utils.cpp.obj: F:/VSCodeWorkspace/Z-Mult
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Logger.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp \
-  F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp \
+  F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Window.hpp \
   F:/msys64/ucrt64/include/_bsd_types.h \
@@ -3249,7 +3249,7 @@ CMakeFiles/ZmultiplierLib.dir/src/window/Window.cpp.obj: F:/VSCodeWorkspace/Z-Mu
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Logger.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp \
-  F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp \
+  F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp \
   F:/VSCodeWorkspace/Z-MultiplierLib/include/Window.hpp \
   F:/msys64/ucrt64/include/_bsd_types.h \
@@ -4346,11 +4346,9 @@ F:/msys64/ucrt64/include/sec_api/stralign_s.h:
 
 F:/msys64/ucrt64/include/windef.h:
 
-F:/msys64/ucrt64/include/sec_api/string_s.h:
-
-F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Translation.cpp:
-
 F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vlintrin.h:
+
+F:/msys64/ucrt64/include/sec_api/string_s.h:
 
 F:/msys64/ucrt64/include/sec_api/wchar_s.h:
 
@@ -4377,6 +4375,8 @@ F:/msys64/ucrt64/include/gdiplus/gdiplusimageattributes.h:
 F:/msys64/ucrt64/include/stringapiset.h:
 
 F:/msys64/ucrt64/include/swprintf.inl:
+
+F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Transformation.cpp:
 
 F:/msys64/ucrt64/include/synchapi.h:
 
@@ -4628,8 +4628,6 @@ F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/wmmintrin.h:
 
 F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86intrin.h:
 
-F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp:
-
 F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xmmintrin.h:
 
 F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xsavecintrin.h:
@@ -4645,6 +4643,8 @@ F:/msys64/ucrt64/include/gdiplus/gdiplusmetaheader.h:
 F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Image.cpp:
 
 F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp:
+
+F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp:
 
 F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp:
 

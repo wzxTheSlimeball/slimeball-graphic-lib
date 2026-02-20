@@ -3,7 +3,7 @@
 //Copyright (c) 2026 Z-Multiplier
 #include "Image.hpp"
 #include "Window.hpp"
-#include "Translation.hpp"
+#include "Transformation.hpp"
 #include <iostream>
 #include <cmath>
 

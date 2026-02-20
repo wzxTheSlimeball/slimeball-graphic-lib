@@ -26,7 +26,7 @@ add_library(ZmultiplierLib STATIC
     src/core/EntryPoint.cpp
     src/assets/Image.cpp
     src/assets/Font.cpp
-    src/assets/Translation.cpp
+    src/assets/Transformation.cpp
 )
 
 target_link_libraries(ZmultiplierLib PRIVATE

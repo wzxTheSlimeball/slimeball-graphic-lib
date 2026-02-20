@@ -55,9 +55,9 @@
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\assets\\Translation.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\assets\\Translation.cpp",
-  "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Translation.cpp",
-  "output": "CMakeFiles/ZmultiplierLib.dir/src/assets/Translation.cpp.obj"
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe -DNOMINMAX @CMakeFiles/ZmultiplierLib.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\ZmultiplierLib.dir\\src\\assets\\Transformation.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\src\\assets\\Transformation.cpp",
+  "file": "F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Transformation.cpp",
+  "output": "CMakeFiles/ZmultiplierLib.dir/src/assets/Transformation.cpp.obj"
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build/examples",

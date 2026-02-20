@@ -4,7 +4,7 @@
 #ifndef IMAGE_HPP
 #define IMAGE_HPP
 #include "Color.hpp"
-#include "Translation.hpp"
+#include "Transformation.hpp"
 #include <windows.h>
 #include <string>
 #include <vector>

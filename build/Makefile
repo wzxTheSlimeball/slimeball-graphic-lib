@@ -234,29 +234,29 @@ src/assets/Image.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZmultiplierLib.dir\build.make CMakeFiles/ZmultiplierLib.dir/src/assets/Image.cpp.s
 .PHONY : src/assets/Image.cpp.s
 
-src/assets/Translation.obj: src/assets/Translation.cpp.obj
-.PHONY : src/assets/Translation.obj
+src/assets/Transformation.obj: src/assets/Transformation.cpp.obj
+.PHONY : src/assets/Transformation.obj
 
 # target to build an object file
-src/assets/Translation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZmultiplierLib.dir\build.make CMakeFiles/ZmultiplierLib.dir/src/assets/Translation.cpp.obj
-.PHONY : src/assets/Translation.cpp.obj
+src/assets/Transformation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZmultiplierLib.dir\build.make CMakeFiles/ZmultiplierLib.dir/src/assets/Transformation.cpp.obj
+.PHONY : src/assets/Transformation.cpp.obj
 
-src/assets/Translation.i: src/assets/Translation.cpp.i
-.PHONY : src/assets/Translation.i
+src/assets/Transformation.i: src/assets/Transformation.cpp.i
+.PHONY : src/assets/Transformation.i
 
 # target to preprocess a source file
-src/assets/Translation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZmultiplierLib.dir\build.make CMakeFiles/ZmultiplierLib.dir/src/assets/Translation.cpp.i
-.PHONY : src/assets/Translation.cpp.i
+src/assets/Transformation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZmultiplierLib.dir\build.make CMakeFiles/ZmultiplierLib.dir/src/assets/Transformation.cpp.i
+.PHONY : src/assets/Transformation.cpp.i
 
-src/assets/Translation.s: src/assets/Translation.cpp.s
-.PHONY : src/assets/Translation.s
+src/assets/Transformation.s: src/assets/Transformation.cpp.s
+.PHONY : src/assets/Transformation.s
 
 # target to generate assembly for a file
-src/assets/Translation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZmultiplierLib.dir\build.make CMakeFiles/ZmultiplierLib.dir/src/assets/Translation.cpp.s
-.PHONY : src/assets/Translation.cpp.s
+src/assets/Transformation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZmultiplierLib.dir\build.make CMakeFiles/ZmultiplierLib.dir/src/assets/Transformation.cpp.s
+.PHONY : src/assets/Transformation.cpp.s
 
 src/core/Canvas.obj: src/core/Canvas.cpp.obj
 .PHONY : src/core/Canvas.obj
@@ -446,9 +446,9 @@ help:
 	@echo ... src/assets/Image.obj
 	@echo ... src/assets/Image.i
 	@echo ... src/assets/Image.s
-	@echo ... src/assets/Translation.obj
-	@echo ... src/assets/Translation.i
-	@echo ... src/assets/Translation.s
+	@echo ... src/assets/Transformation.obj
+	@echo ... src/assets/Transformation.i
+	@echo ... src/assets/Transformation.s
 	@echo ... src/core/Canvas.obj
 	@echo ... src/core/Canvas.i
 	@echo ... src/core/Canvas.s

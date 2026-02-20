@@ -378,7 +378,7 @@ CMakeFiles/ZmultiplierLib.dir/src/assets/Image.cpp.obj
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Logger.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp
- F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp
+ F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Window.hpp
  F:/msys64/ucrt64/include/_bsd_types.h
@@ -881,9 +881,9 @@ CMakeFiles/ZmultiplierLib.dir/src/assets/Image.cpp.obj
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xsavesintrin.h
  F:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xtestintrin.h
 
-CMakeFiles/ZmultiplierLib.dir/src/assets/Translation.cpp.obj
- F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Translation.cpp
- F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp
+CMakeFiles/ZmultiplierLib.dir/src/assets/Transformation.cpp.obj
+ F:/VSCodeWorkspace/Z-MultiplierLib/src/assets/Transformation.cpp
+ F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp
  F:/msys64/ucrt64/include/_mingw.h
  F:/msys64/ucrt64/include/_mingw_mac.h
  F:/msys64/ucrt64/include/_mingw_secapi.h
@@ -2219,7 +2219,7 @@ CMakeFiles/ZmultiplierLib.dir/src/painter/Painter.cpp.obj
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Logger.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp
- F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp
+ F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Window.hpp
  F:/msys64/ucrt64/include/_bsd_types.h
@@ -2748,7 +2748,7 @@ CMakeFiles/ZmultiplierLib.dir/src/utils/Utils.cpp.obj
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Logger.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp
- F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp
+ F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Window.hpp
  F:/msys64/ucrt64/include/_bsd_types.h
@@ -3259,7 +3259,7 @@ CMakeFiles/ZmultiplierLib.dir/src/window/Window.cpp.obj
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Image.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Logger.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Painter.hpp
- F:/VSCodeWorkspace/Z-MultiplierLib/include/Translation.hpp
+ F:/VSCodeWorkspace/Z-MultiplierLib/include/Transformation.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Utils.hpp
  F:/VSCodeWorkspace/Z-MultiplierLib/include/Window.hpp
  F:/msys64/ucrt64/include/_bsd_types.h
