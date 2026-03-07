@@ -35,3 +35,4 @@ void Core::logger::traceLog(enum LogLevel level,std::string message){
             break;
     }
 }
+Core::logger globalLogger;

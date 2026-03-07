@@ -1,0 +1,3 @@
+F:\Cmake\bin\cmake.exe -E rm -f CMakeFiles\eg13_text.exe.dir/objects.a
+F:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\eg13_text.exe.dir/objects.a @CMakeFiles\eg13_text.exe.dir\objects1.rsp
+F:\msys64\ucrt64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\eg13_text.exe.dir/objects.a -Wl,--no-whole-archive -o ..\bin\eg13_text.exe.exe -Wl,--out-implib,..\lib\libeg13_text.exe.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\eg13_text.exe.dir\linkLibs.rsp

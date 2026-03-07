@@ -1,2 +1,2 @@
-add_executable(test.exe test.cpp)
-target_link_libraries(test.exe ZmultiplierLib)
+add_executable(eg13_text.exe eg13_text.cpp)
+target_link_libraries(eg13_text.exe ZmultiplierLib)

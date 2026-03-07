@@ -476,6 +476,7 @@ namespace Window{
         if(this->isEmpty()){
             WindowLogger.traceLog(Core::logger::LOG_INFO,"Quitting program");
             PostQuitMessage(0);
+            exit(0);
             return true;
         }
         return false;

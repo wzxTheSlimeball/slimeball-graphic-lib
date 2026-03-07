@@ -86,29 +86,29 @@ namespace Window{
             HWND getHWnd(){
                 return this->thisBindHWnd;
             }
-            bool alphaBlender(int x,int y,int width,int height,const Core::Color &color);
-            bool drawBackground(const Core::Color &color);
-            HDC getHDC(){
+            bool alphaBlender(int x,int y,int width,int height,const Core::Color &color)const;
+            bool drawBackground(const Core::Color &color)const;
+            HDC getHDC()const{
                 return this->thisHDC;
             }
             void updateHDC();
             void present();
             void switchHDC();
-            bool putPixel(int x,int y,const Core::Color& color);
-            bool line(Point a,Point b,const Core::Color& color);
-            bool slopeLine(Point a,Point b,const Core::Color& color);
+            bool putPixel(int x,int y,const Core::Color& color)const;
+            bool line(Point a,Point b,const Core::Color& color)const;
+            bool slopeLine(Point a,Point b,const Core::Color& color)const;
             void setSize(int target);
-            bool putUnitPixel(int x,int y,const Core::Color& color);
-            bool floodFill(Point source,const Core::Color& color);
-            bool hollowPolygon(const vector<Point>& points,const Core::Color& color);
-            bool solidPolygon(const vector<Point>& points,const Core::Color& color);
-            bool hollowCircle(const Point& origin,int radius,const Core::Color& color);
-            bool solidCircle(const Point& origin,int radius,const Core::Color& color);
+            bool putUnitPixel(int x,int y,const Core::Color& color)const;
+            bool floodFill(Point source,const Core::Color& color)const;
+            bool hollowPolygon(const vector<Point>& points,const Core::Color& color)const;
+            bool solidPolygon(const vector<Point>& points,const Core::Color& color)const;
+            bool hollowCircle(const Point& origin,int radius,const Core::Color& color)const;
+            bool solidCircle(const Point& origin,int radius,const Core::Color& color)const;
             bool putImage(char locateMode,const Point& locator,const Assets::Image& src,unsigned char alpha)const;
-            bool putText(char locateMode,const Point& locator,const Assets::Font& font,const std::wstring& text,const Core::Color& color);
-            bool bezierCurve(const vector<Point>& points,int accuracy,const Core::Color& color);
-            bool hollowEllipse(Point center,int rX,int rY,const Core::Color& color);
-            bool solidEllipse(Point center,int rX,int rY,const Core::Color& color);
+            bool putText(char locateMode,const Point& locator,const Assets::Font& font,const std::wstring& text,const Core::Color& color)const;
+            bool bezierCurve(const vector<Point>& points,int accuracy,const Core::Color& color)const;
+            bool hollowEllipse(Point center,int rX,int rY,const Core::Color& color)const;
+            bool solidEllipse(Point center,int rX,int rY,const Core::Color& color)const;
     };
 }
 #endif//PAINTER_HPP

@@ -1,3 +1,5 @@
+[![Windows](https://img.shields.io/badge/platform-Windows-blue)]() [![C++](https://img.shields.io/badge/language-C%2B%2B-00599C)]() [![License](https://img.shields.io/badge/license-MIT-green)]() [![Status](https://img.shields.io/badge/status-active-brightgreen)]()
+
 # Z-Multiplier Lib
 ------------------
 #### **Still under development**

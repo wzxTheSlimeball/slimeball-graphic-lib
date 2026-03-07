@@ -79,8 +79,8 @@
 },
 {
   "directory": "F:/VSCodeWorkspace/Z-MultiplierLib/build/examples",
-  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/test.exe.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\test.exe.dir\\test.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\examples\\test.cpp",
-  "file": "F:/VSCodeWorkspace/Z-MultiplierLib/examples/test.cpp",
-  "output": "examples/CMakeFiles/test.exe.dir/test.cpp.obj"
+  "command": "F:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/eg13_text.exe.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles\\eg13_text.exe.dir\\eg13_text.cpp.obj -c F:\\VSCodeWorkspace\\Z-MultiplierLib\\examples\\eg13_text.cpp",
+  "file": "F:/VSCodeWorkspace/Z-MultiplierLib/examples/eg13_text.cpp",
+  "output": "examples/CMakeFiles/eg13_text.exe.dir/eg13_text.cpp.obj"
 }
 ]

@@ -18,7 +18,7 @@
 #define SCREEN_MAXY GetSystemMetrics(SM_CYSCREEN)
 
 extern HINSTANCE mainHInstance;
-Core::logger globalLogger;
+extern Core::logger globalLogger;
 
 inline std::pair<std::shared_ptr<Window::Handle>, HWND> 
 createInitWindow(int x,int y,int width,int height,std::wstring title,HINSTANCE instance=mainHInstance) 

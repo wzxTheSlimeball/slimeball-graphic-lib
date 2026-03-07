@@ -2,22 +2,15 @@
 using namespace Graphics;
 
 long long mainWindowDrawer(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam,Painter& painter){
-    //Assets::Font font(L"Arial",20,10,FONTWEIGHT_BLACK,false,false,false);
-    static Assets::Image img;
-    static bool loaded=false;
-    if(!loaded||!img.getHBITMAP())
-        img=Assets::Image(L"./test.png"),loaded=true;
-    painter.drawBackground(Color((unsigned char)0,0,0,255));
-    //font.loadFont();
-    painter.setSize(2);
-    painter.putImage(LOCATEMODE_CENTER,Point(400,300),img,255);
-    painter.putPixel(600,400,Color((unsigned char)255,0,0,255));
+    painter.drawBackground(Color((unsigned char)255,255,255,255));
+    painter.bezierCurve({{10,10},{10,190},{190,190}},5,Color((unsigned char)0,0,0,255));
+    painter.bezierCurve({{210,10},{210,190},{390,190}},10,Color((unsigned char)0,0,0,255));
+    painter.bezierCurve({{410,10},{410,190},{590,190}},20,Color((unsigned char)0,0,0,255));
     return 0;
 }
 
 int main(){
-    auto mainWindow=createInitTransparentTopWindow(0,0,800,600,L"Window",Color((unsigned char)0,0,0));
-    //auto mainWindow=createInitWindow(100,100,800,600,L"Window");
+    auto mainWindow=createInitWindow(0,0,607,230,L"Window");
     std::function<long long(HWND,UINT,WPARAM,LPARAM,Painter&)> mainWindowDrawerFunc=mainWindowDrawer;
     mainWindow.first->thisPaint=mainWindowDrawerFunc;
 

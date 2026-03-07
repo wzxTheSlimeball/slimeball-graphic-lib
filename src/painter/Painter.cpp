@@ -15,7 +15,7 @@
 #include <cmath>
 
 Core::logger PainterLogger;
-bool Window::Painter::alphaBlender(int x,int y,int width,int height,const Core::Color &color){
+bool Window::Painter::alphaBlender(int x,int y,int width,int height,const Core::Color &color)const{
     if(x<0||y<0||width<0||height<0){
         PainterLogger.formatLog(Core::logger::LOG_WARNING,"Invalid rectangle,This may not do what you expected:x=%d,y=%d,w=%d,h=%d",x,y,width,height);
     }
@@ -60,7 +60,7 @@ bool Window::Painter::alphaBlender(int x,int y,int width,int height,const Core::
     DeleteDC(memHDC);
     return (result!=FALSE);
 }
-bool Window::Painter::drawBackground(const Core::Color &color){
+bool Window::Painter::drawBackground(const Core::Color &color)const{
     RECT rect;
     GetClientRect(this->thisBindHWnd,&rect);
     return this->alphaBlender(0,0,rect.right,rect.bottom,color);
@@ -93,13 +93,13 @@ void Window::Painter::switchHDC(){
 bool Window::Point::operator==(Point& other){
     return this->x==other.x&&this->y==other.y;
 }
-bool Window::Painter::putUnitPixel(int x,int y,const Core::Color& color){
+bool Window::Painter::putUnitPixel(int x,int y,const Core::Color& color)const{
     return this->alphaBlender(x,y,1,1,color);
 }
-bool Window::Painter::putPixel(int x,int y,const Core::Color& color){
+bool Window::Painter::putPixel(int x,int y,const Core::Color& color)const{
     return this->alphaBlender(x-this->radius,y-this->radius,1+this->radius,1+this->radius,color);
 }
-bool Window::Painter::line(Point a,Point b,const Core::Color& color){
+bool Window::Painter::line(Point a,Point b,const Core::Color& color)const{
     if(a==b){
         putPixel(a.x,a.y,color);
         return true;
@@ -150,7 +150,7 @@ bool Window::Painter::line(Point a,Point b,const Core::Color& color){
 void Window::Painter::setSize(int target){
     this->radius=target;
 }
-bool Window::Painter::floodFill(Window::Point source,const Core::Color& color){
+bool Window::Painter::floodFill(Window::Point source,const Core::Color& color)const{
     int width=this->thisBindHandle->getRect().right;
     int height=this->thisBindHandle->getRect().bottom;
     HDC tempHDC=this->thisBindHandle->getBuffer().memHDC;
@@ -272,7 +272,7 @@ bool Window::Painter::floodFill(Window::Point source,const Core::Color& color){
     DeleteDC(memDC);
     return true;
 }
-bool Window::Painter::hollowPolygon(const vector<Point>& points,const Core::Color& color){
+bool Window::Painter::hollowPolygon(const vector<Point>& points,const Core::Color& color)const{
     for(unsigned int i=0;i<points.size();i++){
         bool result=line(points[i],points[(i+1)%points.size()],color);
         if(!result){
@@ -281,7 +281,7 @@ bool Window::Painter::hollowPolygon(const vector<Point>& points,const Core::Colo
     }
     return true;
 }
-bool Window::Painter::slopeLine(Point a,Point b,const Core::Color& color){
+bool Window::Painter::slopeLine(Point a,Point b,const Core::Color& color)const{
     int dx=b.x-a.x;
     int dy=b.y-a.y;
     int steps=abs(dx)>abs(dy)?abs(dx):abs(dy);
@@ -303,7 +303,7 @@ bool Window::Painter::slopeLine(Point a,Point b,const Core::Color& color){
     }
     return true;
 }
-bool Window::Painter::solidPolygon(const vector<Point>& points,const Core::Color& color){
+bool Window::Painter::solidPolygon(const vector<Point>& points,const Core::Color& color)const{
     if(points.size()<3) return false;
     struct Edge{int minY;int maxY;float curX;float invSlope;};
     int globalMinY=INT_MAX;
@@ -350,7 +350,7 @@ bool Window::Painter::solidPolygon(const vector<Point>& points,const Core::Color
     }
     return true;
 }
-bool Window::Painter::hollowCircle(const Window::Point& origin,int r,const Core::Color& color){
+bool Window::Painter::hollowCircle(const Window::Point& origin,int r,const Core::Color& color)const{
     auto insideWindow=[this](int tx,int ty){
         return tx>=0&&tx<thisBindHandle->getRect().right&&ty>=0&&ty<thisBindHandle->getRect().bottom;
     };
@@ -387,7 +387,7 @@ bool Window::Painter::hollowCircle(const Window::Point& origin,int r,const Core:
     }
     return true;
 }
-bool Window::Painter::solidCircle(const Point& origin,int r,const Core::Color& color){
+bool Window::Painter::solidCircle(const Point& origin,int r,const Core::Color& color)const{
     if(r<0) return false;
     int ox=origin.x;
     int oy=origin.y;
@@ -470,7 +470,7 @@ bool Window::Painter::putImage(char locateMode,const Point& locator,const Assets
     DeleteDC(hdcMem);
     return result != FALSE;
 }
-bool Window::Painter::putText(char locateMode,const Point& locator,const Assets::Font& font,const std::wstring& text,const Core::Color& color){
+bool Window::Painter::putText(char locateMode,const Point& locator,const Assets::Font& font,const std::wstring& text,const Core::Color& color)const{
     SelectObject(this->thisHDC,font.thisHFont);
     TEXTMETRIC tm;
     SIZE size;
@@ -493,7 +493,7 @@ Window::Point calcBezierPoint(double t,const vector<Window::Point>& vec){
     }
     return temp[0];
 }
-bool Window::Painter::bezierCurve(const vector<Point>& points,int accuracy,const Core::Color& color){
+bool Window::Painter::bezierCurve(const vector<Point>& points,int accuracy,const Core::Color& color)const{
     if(points.size()<=2){
         PainterLogger.traceLog(Core::logger::LOG_WARNING,"expected more than 3 points,actually <=2,use line() instead");
         return false;
@@ -518,7 +518,7 @@ bool Window::Painter::bezierCurve(const vector<Point>& points,int accuracy,const
     }
     return true;
 }
-bool Window::Painter::hollowEllipse(Point center,int rX,int rY,const Core::Color& color){
+bool Window::Painter::hollowEllipse(Point center,int rX,int rY,const Core::Color& color)const{
     int x=0;
     int y=rY;
     float d1=static_cast<float>(rY*rY-rX*rX*rY+0.25*rX*rX);
@@ -565,7 +565,7 @@ bool Window::Painter::hollowEllipse(Point center,int rX,int rY,const Core::Color
     }
     return true;
 }
-bool Window::Painter::solidEllipse(Point center,int rX,int rY,const Core::Color& color){
+bool Window::Painter::solidEllipse(Point center,int rX,int rY,const Core::Color& color)const{
     int x=0;
     int y=rY;
     float d1=static_cast<float>(rY*rY-rX*rX*rY+0.25*rX*rX);

@@ -161,42 +161,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-examples/CMakeFiles/test.exe.dir/rule:
-	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 examples/CMakeFiles/test.exe.dir/rule
-.PHONY : examples/CMakeFiles/test.exe.dir/rule
+examples/CMakeFiles/eg13_text.exe.dir/rule:
+	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 examples/CMakeFiles/eg13_text.exe.dir/rule
+.PHONY : examples/CMakeFiles/eg13_text.exe.dir/rule
 
 # Convenience name for target.
-test.exe: examples/CMakeFiles/test.exe.dir/rule
-.PHONY : test.exe
+eg13_text.exe: examples/CMakeFiles/eg13_text.exe.dir/rule
+.PHONY : eg13_text.exe
 
 # fast build rule for target.
-test.exe/fast:
-	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\test.exe.dir\build.make examples/CMakeFiles/test.exe.dir/build
-.PHONY : test.exe/fast
+eg13_text.exe/fast:
+	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg13_text.exe.dir\build.make examples/CMakeFiles/eg13_text.exe.dir/build
+.PHONY : eg13_text.exe/fast
 
-test.obj: test.cpp.obj
-.PHONY : test.obj
+eg13_text.obj: eg13_text.cpp.obj
+.PHONY : eg13_text.obj
 
 # target to build an object file
-test.cpp.obj:
-	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\test.exe.dir\build.make examples/CMakeFiles/test.exe.dir/test.cpp.obj
-.PHONY : test.cpp.obj
+eg13_text.cpp.obj:
+	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg13_text.exe.dir\build.make examples/CMakeFiles/eg13_text.exe.dir/eg13_text.cpp.obj
+.PHONY : eg13_text.cpp.obj
 
-test.i: test.cpp.i
-.PHONY : test.i
+eg13_text.i: eg13_text.cpp.i
+.PHONY : eg13_text.i
 
 # target to preprocess a source file
-test.cpp.i:
-	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\test.exe.dir\build.make examples/CMakeFiles/test.exe.dir/test.cpp.i
-.PHONY : test.cpp.i
+eg13_text.cpp.i:
+	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg13_text.exe.dir\build.make examples/CMakeFiles/eg13_text.exe.dir/eg13_text.cpp.i
+.PHONY : eg13_text.cpp.i
 
-test.s: test.cpp.s
-.PHONY : test.s
+eg13_text.s: eg13_text.cpp.s
+.PHONY : eg13_text.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\test.exe.dir\build.make examples/CMakeFiles/test.exe.dir/test.cpp.s
-.PHONY : test.cpp.s
+eg13_text.cpp.s:
+	cd /d F:\VSCodeWorkspace\Z-MultiplierLib\build && $(MAKE) $(MAKESILENT) -f examples\CMakeFiles\eg13_text.exe.dir\build.make examples/CMakeFiles/eg13_text.exe.dir/eg13_text.cpp.s
+.PHONY : eg13_text.cpp.s
 
 # Help Target
 help:
@@ -210,10 +210,10 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... test.exe
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
+	@echo ... eg13_text.exe
+	@echo ... eg13_text.obj
+	@echo ... eg13_text.i
+	@echo ... eg13_text.s
 .PHONY : help
 
 

@@ -634,9 +634,6 @@ long long mainWindowLClick(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam,int x
     }
     //发射子弹
     shootCooldown=std::max(50-(5*level),10)-learnedSkills[L"攻速突破"];
-    static auto shootSound=std::make_shared<Audio::Noise>(L"./explode1.wav");
-    Audio::PlayRequest req(shootSound,0.8f,1.0f,true);
-    Audio::AudioManager::instance().pushRequest(req);
     return 0;
 }
 
