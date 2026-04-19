@@ -107,3 +107,75 @@ bool UI::Checkbox::switchStatus(int x,int y){
     }
     return false;
 }
+bool UI::SingleChooseButtonGroup::show(Window::Painter& p){
+    for(const auto& scb:group){
+        if(!p.solidCircle(scb.center,scb.size-1,scb.backGround)){
+            return false;
+        }
+        if(!p.solidCircle(scb.center,scb.size-3,scb.choosed?scb.color:scb.backGround)){
+            return false;
+        }
+        if(!p.hollowCircle(scb.center,scb.size,scb.color)){
+            return false;
+        }
+    }
+    return true;
+}
+bool UI::SingleChooseButtonGroup::react(int x,int y){
+    bool ret=false;
+    size_t idx=-1;
+    for(size_t i=0;i<group.size();i++){
+        auto& scb=group[i];
+        auto [cx,cy]=scb.center;
+        double dist=sqrt((cx-x)*(cx-x)+(cy-y)*(cy-y));
+        if(dist<scb.size){
+            ret=true;
+            idx=i;
+        }
+    }
+    if(ret){
+        for(size_t i=0;i<group.size();i++){
+            auto& scb=group[i];
+            if(i!=idx){
+                scb.choosed=false;
+            }
+            else{
+                scb.choosed=true;
+            }
+        }
+    }
+    return ret;
+}
+bool UI::TextBar::show(Window::Painter& p){
+    auto [cx,cy]=Window::calculateDrawPosition(locateMode,locator,width,height);
+    if(!p.solidPolygon({{cx,cy},{cx+width,cy},{cx+width,cy+height},{cx,cy+height}},bkc)){
+        return false;
+    }
+    if(!p.putText(LOCATEMODE_LEFTUPCORNER,{cx+xoffset,cy+yoffset},font,str,txtc)){
+        return false;
+    }
+    return true;
+}
+bool UI::TextBar::tryCapture(int x,int y){
+    auto [cx,cy]=Window::calculateDrawPosition(locateMode,locator,width,height);
+    if(x>cx&&x<cx+width&&y>cy&&y<cy+height){
+        this->captured=true;
+    }
+    else{
+        this->captured=false;
+    }
+    return this->captured;
+}
+bool UI::ProgressBar::show(Window::Painter& p){
+    auto [cx,cy]=Window::calculateDrawPosition(locateMode,locator,width,height);
+    if(!p.solidPolygon({{cx,cy},{cx+width,cy},{cx+width,cy+height},{cx,cy+height}},body)){
+        return false;
+    }
+    if(!p.solidPolygon({{cx+1,cy+1},{cx+static_cast<int>(width*progress)-1,cy+1},{cx+static_cast<int>(width*progress)-1,cy+height-1},{cx+1,cy+height-1}},showc)){
+        return false;
+    }
+    return true;
+}
+void UI::ProgressBar::delta(float delta){
+    this->progress+=delta;
+}

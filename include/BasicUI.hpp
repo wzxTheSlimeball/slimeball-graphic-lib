@@ -55,6 +55,57 @@ namespace UI{
                  bool defaultStatus):locateMode(locateMode),locator(locator),size(size),borderRadius(radius),
                  body(body),tick(tick),ticked(defaultStatus){};
     };
+    struct SingleChooseButtonGroup{
+        struct SingleChooseButton{
+            Window::Point center;
+            int size;
+            Core::Color color;
+            Core::Color backGround;
+            bool choosed;
+            SingleChooseButton(Window::Point center,int size,Core::Color main,Core::Color bkground):
+                               center(center),size(size),color(main),backGround(bkground),choosed(false){};
+        };
+        std::vector<SingleChooseButton> group;
+        bool show(Window::Painter& p);
+        bool react(int x,int y);
+        SingleChooseButtonGroup(std::vector<SingleChooseButton> arr):group(arr){};
+    };
+    struct TextBar{
+        char locateMode;
+        Window::Point locator;
+        int xoffset,yoffset;//for text;
+        int width,height;
+        Core::Color bkc,txtc;
+        Assets::Font font;
+        std::wstring str;
+        bool captured;
+        TextBar(char locateMode,Window::Point locator,int xoffset,int yoffset,int w,int h,Core::Color bkc,
+                Core::Color txtc,Assets::Font font):locateMode(locateMode),locator(locator),xoffset(xoffset),yoffset(yoffset),
+                                                    width(w),height(h),bkc(bkc),txtc(txtc),font(font),captured(false){
+                                                        str=L"";
+                                                    };
+        bool show(Window::Painter& p);
+        void append(wchar_t wc){
+            str+=wc;
+        }
+        void pop(){
+            if(!str.empty())
+                str.pop_back();
+        }
+        bool tryCapture(int x,int y);
+    };
+    struct ProgressBar{
+        char locateMode;
+        Window::Point locator;
+        float progress;//in [0,1]
+        int width,height;
+        Core::Color body;
+        Core::Color showc;
+        ProgressBar(char locateMode,Window::Point locator,int width,int height,Core::Color body,Core::Color showc):
+                    locateMode(locateMode),locator(locator),progress(0.0f),width(width),height(height),body(body),showc(showc){};
+        bool show(Window::Painter& p);
+        void delta(float delta);
+    };
 };
 
 #endif

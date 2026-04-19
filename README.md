@@ -54,8 +54,10 @@ int main(){
     return 0;
 }
 ```
-(Actually the UI can use now is only the button and checkbox.I haven't code other ones :P)
-(But! Coming soon!)
+
+你可以查看`./include/BasicUI.hpp`以获取所有UI控件
+
+Check `./include/BasicUI.hpp` for all the UIs.
 
 本项目采用[MIT许可](/COPYING)
 
